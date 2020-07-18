@@ -1,0 +1,17 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-TARGETDURATION:60
+#EXT-X-MEDIA-SEQUENCE:0
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:60.060000,
+https://v19.tiktokcdn.com/e45eb92b479e74b6e008d00eb5841e47/5f1339e7/video/tos/alisg/tos-alisg-pv-0037/6254bb17263d416a82e005912709e677/?a=1233&br=7094&bt=3547&cr=0&cs=0&dr=0&ds=4&er=&l=2020071812042701011511924713922080&lr=tiktok_m&mime_type=video_mp4&qs=13&rc=MzU3djpxczpodjMzZDgzM0Apbzxpa2htNmQ8ZTMzMzU6eWdpNmNlYmcwXjZfLS0tLzRzcy0vMXA0a200YnAtLV4yLS06Yw%3D%3D&vl=&vr=
+#EXTINF:60.060000,
+https://v19.tiktokcdn.com/4f48966113a07fdbd3c3be06e4d1ce7d/5f133a3a/video/tos/alisg/tos-alisg-pv-0037/4e2b0fe7289f4b95b9dc39a211c9d40c/?a=1233&br=7110&bt=3555&cr=0&cs=0&dr=0&ds=4&er=&l=2020071812055001011511924117938336&lr=tiktok_m&mime_type=video_mp4&qs=13&rc=M2VqczU7ZjtodjMzZTgzM0Apdzs7amV3ZmQ8ZTMzZTU6eWdxNTVkX3FgXjZfLS1fLzRzcy1fZG0vNWA1YnAtLV8yLS06Yw%3D%3D&vl=&vr=
+#EXTINF:60.060000,
+https://v16m.tiktokcdn.com/8ae5bdfe47b10a1b2d9d1c9adcbedd7a/5f133a64/video/tos/alisg/tos-alisg-pv-0037/ebc9ca723f48431d84a03158d45d7826/?a=1233&br=7140&bt=3570&cr=0&cs=0&dr=0&ds=4&er=&l=2020071812063201011511924713926A0E&lr=tiktok_m&mime_type=video_mp4&qs=13&rc=M2pmZW11OGRodjMzPDgzM0ApZGloaHZwaGQ8ZTMzNDU6eWdeY2JicGpiXjZfLS0uLzRzcy1kYF9nbzJeYnAtLTYyLS06Yw%3D%3D&vl=&vr=
+#EXTINF:60.060000,
+https://v16m.tiktokcdn.com/f9b7eec7005f3894122a29103bd03fdb/5f133a81/video/tos/alisg/tos-alisg-pv-0037/e82d7be408e441d58a4e5b2c37f2ed04/?a=1233&br=7084&bt=3542&cr=0&cs=0&dr=0&ds=4&er=&l=2020071812070101011511924713927AA7&lr=tiktok_m&mime_type=video_mp4&qs=13&rc=anlldDszdWVodjMzZzgzM0ApO3hpZjY4dmQ8ZTMzODU6eWc1cmNgMDJwXjZfLS0yLzRzc2RzX241LW9fYnAtLWEyLS06Yw%3D%3D&vl=&vr=
+#EXTINF:58.591867,
+https://v19.tiktokcdn.com/a774eea3bf9aee7a2742c6ec00d8ba5d/5f132c44/video/tos/alisg/tos-alisg-pv-0037/9d1695121a6245479027d5525f96e43e/?a=1233&br=7094&bt=3547&cr=0&cs=0&dr=0&ds=4&er=&l=20200718110616010115004050018B1F1A&lr=tiktok_m&mime_type=video_mp4&qs=13&rc=amVtNGVqOm1ndjMzZjgzM0ApOndrdGl3cmY8ZTMzZzU6eWc0cWVuY3FsYDZfLS1hLzRzc2RfZy5fZDRnYXAtLWAyLS06Yw%3D%3D&vl=&vr=
+#EXT-X-ENDLIST
