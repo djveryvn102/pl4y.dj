@@ -1,0 +1,17 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-TARGETDURATION:60
+#EXT-X-MEDIA-SEQUENCE:20201216233151
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:60.000000,
+https://ci4.googleusercontent.com/proxy/U83tA4sPJ1mZJP3wJVnVog_RiZO15UsfoIvBERcJBlA5_aahEPv049Qt=s0
+#EXTINF:60.000000,
+https://ci5.googleusercontent.com/proxy/2dL9Oo8miA6sMCseZrEb2bl3dE2mFSN1zNSD-Cehb75bGu47b8C41kh2=s0
+#EXTINF:60.000000,
+https://ci3.googleusercontent.com/proxy/P-L9Hshw1ObhGTjBvXCL-d0ZAo83Q0kyihrDtaLvvsiXp18CRJs4LS1w=s0
+#EXTINF:60.000000,
+https://ci3.googleusercontent.com/proxy/aGfM77NVWMUv_EtmrqjDci-zLmbPfBw0O0XCAbBWp4e4fAGXfiqEzsmM=s0
+#EXTINF:56.733333,
+https://ci3.googleusercontent.com/proxy/FRLgrRr_eD6BuCad16mUIgPGAbYIJ4EckYhxnXNetnejlVNexbIqoOxN=s0
+#EXT-X-ENDLIST
