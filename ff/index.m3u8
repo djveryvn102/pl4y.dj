@@ -1,0 +1,13 @@
+#EXTM3U
+#EXT-X-VERSION:3
+#EXT-X-ALLOW-CACHE:NO
+#EXT-X-TARGETDURATION:120
+#EXT-X-MEDIA-SEQUENCE:20211007165720
+#EXT-X-PLAYLIST-TYPE:VOD
+#EXTINF:120.000000,
+https://cdnwebeditor.picsart.com/web-editor/200a12c9-b717-4f58-905f-db4d0abc98f7.png
+#EXTINF:120.000000,
+https://cdnwebeditor.picsart.com/web-editor/b702a355-67ec-45fb-b8ff-bc9822df7706.png
+#EXTINF:64.266667,
+https://cdnwebeditor.picsart.com/web-editor/ddf1c89b-f42f-46a9-8c4d-d0aae48b28a9.png
+#EXT-X-ENDLIST
