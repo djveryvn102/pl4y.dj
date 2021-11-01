@@ -1,0 +1,26 @@
+
+
+
+
+
+<head>
+    <title>Iframe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ssl.p.jwpcdn.com/player/v/8.1.3/jwplayer.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.1/dist/sweetalert2.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.1/dist/sweetalert2.all.min.js"></script><!-- CORE SCRIPTS-->
+    <script type="text/javascript">jwplayer.key = "W7zSm81+mmIsg7F+fyHRKhF3ggLkTqtGMhvI92kbqf/ysE99";</script>
+    <meta name="referrer" content="no-referrer | same-origin | origin | strict-origin | no-origin-when-downgrading">
+</head> 
+<body style="margin: unset;">
+    <div id="mediaplayer"></div>
+</body>
+<script>
+    jwplayer("mediaplayer").setup({
+        width:"900",
+        heigth:"600",
+        autostart:true,
+        preload: "auto",
+        file: "https://play.dj/01112021/playlist.m3u8"
+    });
+</script>
