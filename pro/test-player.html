@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/slide.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+	<link rel="stylesheet" href="css/psbar.css" type="text/css">
+	<script src="player/test/mediaelement-and-player.js"></script>
+	<script src="player/dist/loop/loop.js"></script>
+	<script src="player/dist/quality/quality.js"></script>
+	<link rel="stylesheet" href="player/mediaelementplayer.css" type="text/css">
+	<link rel="stylesheet" href="player/dist/quality/quality.css" type="text/css">
+	<script src="player/dist/autonext/autonext.js"></script>
+
+    
+
+</head>
+<body class="">
+
+        <!--music player-->
+        <div class="music-player">
+            <div id="xplayer">
+			<audio id="audio-mp3" width="100%" controls>
+			<source src="https://audio9.mixcloud.com/secure/hls/4/2/a/6/d70d-9e37-4190-9a61-eec732b02387.m4a/index.m3u8" data-quality="M3U8">
+			<source src="https://stream9.mixcloud.com/secure/c/m4a/64/4/2/a/6/d70d-9e37-4190-9a61-eec732b02387.m4a?sig=gl8KnQwpkD1DGkBNP96GiQ" data-quality="M4A">
+			<source src="https://audio7.mixcloud.com/secure/dash2/0/7/5/c/a75f-1299-4f19-916e-e7aba0d81fa8.m4a/manifest.mpd" data-quality="MPD">
+			<source src="https://s3.castbox.fm/15/a1/db/70796f44f1a6db706a79fa1ef8.wav" data-quality="Lossless">
+			<source src="https://stream6.mixcloud.com/secure/c/m4a/64/5/9/8/7/0fdc-60cf-4d7a-9bb1-e0db2e1de264.m4a?sig=BSB4uOYxruiAhiYa3RHBhg" data-quality="500kbps">
+			<source src="https://s3.castbox.fm/b3/08/36/d8c1924549a7abeaf7ab610a20.mp3" data-quality="320kbps">
+			<source src="https://s3.castbox.fm/75/9f/55/f1d39e4f94b769aa6a8536fb67.mp3" data-quality="128kbps">
+			<source src="https://ia801507.us.archive.org/32/items/12-02-2020_202002/168-25.m4a" data-quality="M4A-25">
+			</audio></div>
+        </div>
+    <!--/music player-->
+           
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/slide.min.js"></script>
+<script type="text/javascript" src="js/detectmobilebrowser.js"></script>
+<script type="text/javascript" src="js/jquery.newsTicker.js"></script>
+<script type="text/javascript" src="js/psbar.jquery.min.js"></script> 
+<script type="text/javascript" src="js/all.min.js"></script> 
+<script>
+$('audio').mediaelementplayer({
+      autoplay: true,	  
+      features: ['currentTime', 'playpause', 'current','duration', 'progress', 'autonext', 'loop','quality', 'volume' ],
+      autonext: true,
+	  loop: false,
+	  jumpForwardInterval: 5,     
+      loopText: 'Loop',
+	  muteText: 'Volume',
+	  playText: 'Play',
+	  pauseText: 'Pause',
+	  hideVolumeOnTouchDevices: false,
+      success: function (mediaElement, domObject) {
+          mediaElement.play();
+          mediaElement.addEventListener('ended', function (e) {
+            if ($('#autoplay').is(":checked")) {
+               var url = $('#next-video').find('.pt_video_side_vids').find('a').attr('href');
+               if (url) {
+                  window.location.href = url;
+               }
+            }
+            else{
+              /* pass */
+            }
+          }, false);
+      },
+    });
+</script>
+<script>
+$(document).ready(function() {
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+});
+</script>
+<style>
+@media screen and (max-width: 640px){
+	.mejs__playpause-button{
+		margin-right: auto;
+	}
+}
+</style>
+</body></html>

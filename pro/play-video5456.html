@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>dj.pro.vn - Free Mp3 Download and Streaming</title>
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="content-language" content="en">
+    <meta name="description" content="Listen to your favorite mp3 song and Download Mp3 Free in high quality.">
+    <meta name="keywords" content="Free music download, mp3 music download, free mp3 download, mp3 music, free music, new music album, billboard music awards">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"> 
+
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="650">
+    <meta property="og:image:height" content="350">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="article:publisher" content="https://www.facebook.com/">
+    <meta property="og:url" content="https://dj.pro.vn/">
+    <meta property="og:title" content="dj.pro.vn - Free Mp3 Download and Streaming">
+    <meta property="og:description" content="Listen to your favorite mp3 song and Download Mp3 Free in high quality.">
+    <meta property="og:site_name" content="dj.pro.vn">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<link rel="stylesheet" href="css/slide.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css" type="text/css">
+	<link rel="stylesheet" href="css/icons.css" type="text/css">
+	<link rel="stylesheet" href="css/psbar.css" type="text/css">
+	<link rel="stylesheet" href="css/socialshare.css" type="text/css">
+	<link rel="stylesheet" href="css/video-js.min.css" type="text/css">
+	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/videojs-contrib-hls.js"></script>
+
+    
+
+</head>
+<body class="">
+
+<div id="wrapper" class="xmove">
+    <!--header-->
+    <header class="">
+    <div class="container xcontainer">
+        <!--header home top-->
+        <div class="hh-top">
+            <!--mobile menu-->
+            <div id="m-menu"><i class="icon-menu"></i></div>
+            <div id="m-search" class=""><i class="icon-search"></i></div>
+            <div class="trick-menu"><i class="icon-menu"></i></div>
+            <!--logo-->
+            <a id="logo" href="#" title="dj.pro.vn - The best music streaming">
+                <img src="css/images/logo.png" title="dj.pro.vn" alt="dj.pro.vn Logo">
+                <span class="sitename">dj.pro.vn</span>
+                <h1>The best music</h1><span class="clearfix"></span>
+            </a>
+            <!--/logo-->
+            <!--menu-->
+            <div id="menu">
+                <ul class="top-menu">
+                    <li>
+                        <a href="#" title="Genres">Genres</a>
+                            <div class="sub-container three-col" style="display: none;">
+                                    <ul class="sub-menu">
+                                        <li><a href="#" title="Audiophile">Audiophile</a></li>
+                                        <li><a href="#" title="R&amp;B / Soul">R&amp;B / Soul</a></li>
+                                        <li><a href="#" title="Rap / Hip Hop">Rap / Hip Hop</a></li>
+                                        <li><a href="#" title="Rock">Rock</a></li>
+                                        <li><a href="#" title="Ska">Ska</a></li>
+                                        <li><a href="#" title="Trance / House / Techno">Trance / House / Techno</a></li>
+                                    </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                    </li>
+					<li>
+                        <a href="#" title="Video">Video</a>
+                            <div class="sub-container three-col" style="display: none;">
+                                    <ul class="sub-menu">
+                                        <li><a href="#" title="Nhạc trẻ">Nhạc trẻ</a></li>
+                                        <li><a href="#" title="Nhạc vàng">Nhạc vàng</a></li>
+                                        <li><a href="#" title="Dance Việt">Dance Việt</a></li>
+                                        <li><a href="#" title="Rock Việt">Rock Việt</a></li>
+                                        <li><a href="#" title="Hip hop">Hip hop</a></li>
+                                        <li><a href="#" title="Nhạc Remix">Nhạc Remix</a></li>
+                                    </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                    </li>
+                    <li><a href="#" title="Albums">Albums</a></li>
+                    <li><a href="#" title="Artists">Artists</a></li>
+                    <li>
+                        <a href="#" title="Billboard">Billboard</a>
+                        <div class="sub-container" style="display: none;">
+                            <ul class="sub-menu">
+                                <li><a href="#" title="">Top Songs</a></li>
+                                <li><a href="#" title="">Top Albums</a></li>
+                                <li><a href="#" title="">Top Artists</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </li>
+                    <li><a href="#" title="News">News</a></li>
+                    <li><a onclick="goRequestPage(&#39; user/request.html&#39;)" href="javascript:void(0)" title="Request">Request</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+            <!--/menu-->
+            <!--user menu bar-->
+            <div id="user-menu-bar">
+				<div id="header-login" class="guest">
+					<a href=" #" data-toggle="modal" data-target="#pop-login" class="txt-login">
+						Login <i class="icon-play ml5"></i>
+					</a>
+				</div>
+            </div>
+            <!--/user menu bar-->
+            <!--my music-->
+            <a href="javascript:void(0)" data-href="#" title="My Music" id="my-music">
+                <i class="icon-music mr5"></i> My Music
+            </a>
+            <!--/my music-->
+            <!--search-->
+            <div id="search" class="">
+                <div class="search-content">
+                    <input name="keyword" type="text" class="form-control search-input" placeholder="Search songs, albums, artists..." autocomplete="off">
+                    <a onclick="search_suggest()" class="search-submit" href="javascript:void(0)" title="Search">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <div class="search-list search-suggest" style="display:none">    
+					    <ul class="nonestyle ss-songs">
+                            <li class="ss-title"><i class="icon-music mr5"></i> Bài hát</li>
+							<li>
+							    <a href="#" title="Lạc trôi"><p class="ss-name">Nơi này có anh</p></a>
+								<p class="ss-singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p>
+								<div class="clearfix"></div>
+							</li>
+                            <li>
+							    <a href="#" title="Lạc trôi"><p class="ss-name">Lạc trôi</p></a>
+								<p class="ss-singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+							    <a href="#" title="Lạc trôi"><p class="ss-name">Có được không em</p></a>
+								<p class="ss-singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p>
+								<div class="clearfix"></div>
+							</li>
+					    </ul>
+                        <ul class="nonestyle ss-album">
+                            <li class="ss-title"><i class="icon-playlist mr5"></i> Album</li>
+							<li>
+								<a href="#" title="">
+									<img class="thumb" src="images/alb-lactroi.jpg" title="" alt="">
+									<p class="ss-name">lạc Trôi - Single</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="Eric Bellinger">Sơn Tùng M-TP</a></p> 
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<a href="#" title="">
+									<img class="thumb" src="images/alb2.jpg" title="" alt="">
+									<p class="ss-name">Yêu là tha thứ - Single</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="OnlyC">OnlyC</a></p> 
+								<div class="clearfix"></div>
+							</li>
+                            <li>
+								<a href="#" title="">
+									<img class="thumb" src="images/alb1.jpg" title="" alt="">
+									<p class="ss-name">Xin anh đừng - Single</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="Đông Nhi">Đông Nhi</a>, <a href="#" title="Ông Cao Thắng">Ông Cao Thắng</a></p> 
+								<div class="clearfix"></div>
+							</li>
+                        </ul>
+						<ul class="nonestyle ss-video">
+                            <li class="ss-title"><i class="icon-video mr5"></i> Video</li>
+							<li>
+								<a href="#" title="">
+									<img class="thumb-vd" src="images/vd2.jpg" title="" alt="">
+									<p class="ss-name">Lạc trôi</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p> 
+								<div class="clearfix"></div>
+							</li>
+                            <li>
+								<a href="#" title="">
+									<img class="thumb-vd" src="images/vd3.jpg" title="" alt="">
+									<p class="ss-name">Có Được Không Em</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="Chi Dân">Chi Dân</a></p> 
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<a href="#" title="">
+									<img class="thumb-vd" src="images/vd4.jpg" title="" alt="">
+									<p class="ss-name">Nếu Mai Này</p>
+								</a>
+								<p class="ss-singer"><a href="#" title="Dương Hoàng Yến">Dương Hoàng Yến</a></p> 
+								<div class="clearfix"></div>
+							</li>
+                        </ul>
+						<ul class="nonestyle ss-artist">
+							<li class="ss-title"><i class="icon-user-1 mr5"></i> Nghệ sĩ</li>
+							<li>
+								<a href="#" title="Isaac">
+									<img class="thumb" src="images/is.jpg" title="" alt="">
+									<p class="ss-name">Isaac</p>
+									<p class="ss-singer">Việt Nam</p></a>
+								<div class="clearfix"></div>
+							</li>
+							<li>
+								<a href="#" title="Sơn Tùng M-TP">
+									<img class="thumb" src="images/st.jpg" title="" alt="">
+									<p class="ss-name">Sơn Tùng M-TP</p>
+									<p class="ss-singer">Việt Nam</p></a>
+								<div class="clearfix"></div>
+							</li>	
+                            <li>
+								<a href="#" title="Như Quỳnh">
+									<img class="thumb" src="images/nq.jpg" title="" alt="">
+									<p class="ss-name">Như Quỳnh</p>
+									<p class="ss-singer">Việt Nam</p></a>
+								<div class="clearfix"></div>
+							</li>							
+						</ul>
+						<ul class="nonestyle">
+							<li class="ss-bottom"><a href="search-results.html" id="suggest-all">View all</a></li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+            <!--/search-->
+            <div class="clearfix"></div>
+        </div>
+        <!--/header home top-->
+         
+
+<!--/header home bottom-->
+<div class="clearfix"></div>
+</div>
+</header><!--/header-->
+
+    <!--main-->
+    <div id="main" class="main-artist main-artist-album">
+   <div class="container xcontainer">
+        <div class="ads-box">
+			<div class="adv_980_desktop"><img src="ads/ads_980x90.png" alt="Ads" width="980" height="90"></div>
+			<div class="adv_728_ipad"><img src="ads/ads_728x90.png" alt="Ads" width="728" height="90"></div>
+			<div class="adv-300-phone"><img src="ads/ads_300x100.png" alt="Ads" width="300" height="100"></div>
+		</div>
+        <div class="main-content">
+		    
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Video</li>
+			</ol>
+            <!--player-->
+            <div class="play-about">
+                <div class="xtitle">
+                <h2 class="xtitle-name">Yêu Là Tha Thứ (Em Chưa 18 OST)</h2> - <a href="#" title="Little Big Town">OnlyC</a></div>
+                <div class="clearfix"></div>
+                <div class="play-about-info">
+                    <div class="pa-st">
+                        <div class="others small">
+                            <span class="mr20">Released: 2017</span>
+                            <span class="mr20">Thể loại: <a href="#" title="Nhạc trẻ">Nhạc trẻ</a></span>
+                        </div>
+                        <div class="others small">
+						    <span><i class="fa fa-thumbs-o-up"></i> Thích: 3232 </span>
+                            <span><i class="fa fa-thumbs-o-down"></i> Không thích: 32</span>	
+						    <span><i class="fa fa-user-circle-o"></i> Người gửi:
+								<a href="#" class="txt-admin" title="admin">admin</a> <span class="role_user">Super Administrator</span><i class="icon-badge"></i>
+							</span>							
+						</div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="ads-box">
+				<div class="adv_728_destop"><img src="ads/ads_728x90.png" alt="Ads" width="728" height="90"></div>
+				<div class="adv_728_ipad"><img src="ads/ads_728x90.png" alt="Ads" width="728" height="90"></div>
+				<div class="adv-300-phone"><img src="ads/ads_300x250.png" alt="Ads" width="300" height="250"></div>
+			</div>
+			
+            <!--video player-->
+            <video id="play-video" class="video-js vjs-default-skin" controls autoplay preload="auto"
+				  poster="http://retrolab.pt/wp-content/uploads/2015/07/024729512_prevstill.jpeg">
+				  <source src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8" type="application/x-mpegURL" label='480p' res='480' />
+				  <source src="https://vod-download.twitch.tv/239311174-205804574-f384a32a-ee1a-4068-9ffc-f159ad099d3e.mp4" type='video/mp4' label='720p' res='720'/>
+				  <source src="https://vod-download.twitch.tv/239311174-205804574-f384a32a-ee1a-4068-9ffc-f159ad099d3e.mp4" type='video/mp4' label='360p' res='360'/>
+				  <source src="https://multi.animehd.vn/api/hls/964ec51ea741a6b469a8c4e161dbd6ef.m3u8" type='application/x-mpegURL' label='244p' res='244'/> 
+				  <p class="vjs-no-js">Để xem video này, hãy bật JavaScript, và xem xét nâng cấp trình duyệt web <a href="http://videojs.com/html5-video-support/" target="_blank" class="vjs-hidden" hidden="hidden">Hỗ trợ video HTML5</a></p>									   
+			</video>
+            <!--/video player-->
+            
+			 <!--play tool-->
+            <div class="play-tools">
+                <button class="btn btn-sm btn-orange btn-toggle-download" data-toggle="popover" data-placement="bottom" data-popover-content="#pop-download-video-show" ><i class="icon-download"></i> Tải về</button>
+		
+                <a href="#" class="btn btn-sm btn-flat"><i class="fa fa-thumbs-o-up"></i> <span id="text-state">Thích</span></a>
+                <a href="#" class="btn btn-sm btn-flat"><i class="fa fa-thumbs-o-down"></i> <span id="text-state">Không thích</span></a>
+                <a id="tools-report" href="#" data-target="#pop-report" data-toggle="modal" class="btn btn-sm btn-flat"><i class="fa fa-flag"></i> Phản hồi</a>
+                <a id="tools-share" href="javascript:void(0)" class="btn btn-sm btn-flat btn-tools"><i class="icon-share"></i>Chia sẻ</a>
+                <div class="pull-right"><i class="icon-download"></i> 320 <i class="fa fa-eye"></i> 20</div>
+            </div>
+            <div class="clearfix"></div>
+ 
+            <div id="this-share" class="this-block">
+                <div class="this-block-container">
+                    <p class="desc">Nghe nhạc với bạn bè của bạn! Chia sẻ ngay bây giờ!</p>
+                    <p class="social">
+                        <a onclick="social_share('https://dj.pro.vn',0)" href="javascript:void(0)" title="Share Facebook"><i class="fa fa-facebook-square fa-3x"></i></a>
+                        <a onclick="social_share('https://dj.pro.vn',1)" href="javascript:void(0)" title="Share Google"><i class="fa fa-google-plus-square fa-3x"></i></a>
+                        <a onclick="social_share('https://dj.pro.vn',2)" href="javascript:void(0)" title="Share Twitter"><i class="fa fa-twitter-square fa-3x"></i></a>
+                    </p>
+					<div class="context mb20">
+					    <div class="row">
+						    <div class="col-sm-10 col-xs-9"><input type="text" class="frm-textbox js-copyinput txt-long-100" name="" value="http://dj.pro.vn/video/nonstop-sieu-pham-nhac-tre-bay-nhay-cuc-chat-1492222548.html"></div>	
+                            <div class="col-sm-2 col-xs-3 pd-l0"><button  class="js-inputcopybtn btn btn-block btn-success">Copy</button></div>
+                        </div>	
+                        <div class="row"> 					
+                            <div class="outside-textarea col-sm-10 col-xs-9"><textarea class="js-copytextarea" >&lt;iframe scrolling="no" width="640" height="180" src="http://dj.pro.vn/embed/song/ZW79O8DI" frameborder="0" allowfullscreen="true"&gt;&lt;/iframe&gt;</textarea></div>		
+                            <div class="col-sm-2 col-xs-3 pd-l0 pd-rt"><button class="js-textareacopybtn btn btn-block btn-success">Copy</button></div>	
+						</div>	
+					</div>
+					<script>
+						var copyTextareaBtn = document.querySelector('.js-inputcopybtn');
+						copyTextareaBtn.addEventListener('click', function(event) {
+						  var copyTextarea = document.querySelector('.js-copyinput');
+						  copyTextarea.select();
+
+						  try {
+							var successful = document.execCommand('copy');
+							var msg = successful ? 'successful' : 'unsuccessful';
+							console.log('Copying text command was ' + msg);
+						  } catch (err) {
+							console.log('Oops, unable to copy');
+						  }
+						});
+					</script>
+					<script>
+						var copyTextareaBtn = document.querySelector('.js-textareacopybtn');
+						copyTextareaBtn.addEventListener('click', function(event) {
+						  var copyTextarea = document.querySelector('.js-copytextarea');
+						  copyTextarea.select();
+
+						  try {
+							var successful = document.execCommand('copy');
+							var msg = successful ? 'successful' : 'unsuccessful';
+							console.log('Copying text command was ' + msg);
+						  } catch (err) {
+							console.log('Oops, unable to copy');
+						  }
+						});
+					</script>
+                    <a class="btn btn-sm xclose small mt10" title="Close"><i class="fa fa-close"></i></a>
+                </div>
+            </div>		
+			<ul class="tags">
+               <li><strong>Tags:</strong></li>
+               <li><a href="#">Nhạc trẻ</a></li>
+               <li><a href="#">Rock Việt</a></li>
+               <li><a href="#">Nhạc Remix</a></li>
+               <li><a href="#">Nhạc vàng</a></li>
+               <li><a href="#">Nhạc cách mạng</a></li>
+            </ul>
+ 
+			<!--lyric-->
+            <div class="play-lyric">
+			    <div class="row">
+					<div class="col-md-7 col-sm-6 col-xs-12">
+						<div class="play-lyric-content">
+							<span id="lyrics-title" class="lyric-name">Lyrics "Welcome to the Family"</span>
+							<div id="lyrics-content"><p>[Verse 1]<br>
+								Welcome to the family<br>
+								Hope you have a real good life<br>
+								With my little sister<br>
+								Yeah, she'll make a real good wife<br>
+								Hope you have lots of babies<br>
+								Hope you get a real job<br>
+								Hope you don't mind company<br>
+								Because we'll be there a lot<br>
+								And brother here's some brotherly advice<br>
+								If you know what's good for you you'll treat her right (Because)</p>
+
+								<p>&nbsp;</p>
+
+								<p>[Chorus]<br>
+								Because grandpa's the local sheriff<br>
+								Yeah he's the judge and the jury too<br>
+								Uncle Bill's the undertaker, son<br>
+								He'll dig a hole for you<br>
+								Cousin Jesse, he's just crazy<br>
+								He'll fight you just for fun<br>
+								Mama's got a real bad temper<br>
+								And daddy's got a shotgun</p>
+
+								<p>&nbsp;</p>
+
+								<p>[Verse 2]<br>
+								Welcome to the family<br>
+								And this side of the tracks<br>
+								If you ever leave her<br>
+								You aren't coming back<br>
+								My nephew Red's a hunter<br>
+								He's going to hunt you down<br>
+								Just like he did the last one<br>
+								And he still aren't been found<br>
+								Now I like you just fine, don't get me wrong<br>
+								But bot take care of her 'cause if you don't</p>
+
+								<p>&nbsp;</p>
+
+								<p>[Chorus x2]</p>
+
+								<p>[Verse 3]<br>
+								Welcome to the family<br>
+								Hope you have a real good life<br>
+								With my little sister<br>
+								Yeah she'll make a real good wife</p>
+								</div>
+						</div>
+						<a class="toggle-lyric"><i class="fa fa-angle-down"></i> more</a>
+					</div>
+					<div class="col-md-5 col-sm-6 col-xs-12">
+						<div class="ads-box"><div class="adv-336"><img src="ads/ads_336x280.png" alt="Ads" width="336" height="280"></div></div>
+					</div>
+				</div>
+            </div>
+			<div class="ads-box"><div class="adv-300-phone"><img src="ads/ads_300x250.png" alt="Ads" width="300" height="250"></div></div>
+            <!--/lyric-->
+<!--video list-->
+<div class="artist-album-list play-album-list">
+    <div class="xtitle">
+        <h3 class="xtitle-name">Video OnlyC</h3>
+        <a href="#" title="View all albums" class="more">VIEW ALL</a>
+        <div class="clearfix"></div>
+    </div>
+    <div class="video-list">
+                 
+        <div class="item">
+						<a href="#" class="thumb" title="Anh Đã Quen Với Cô Đơn">
+							<img src="images/sb.jpg" title="Anh Đã Quen Với Cô Đơn" alt="">
+							<span class="icon_video_time">04:15</span>
+						</a>
+						<div class="item-caption">
+							<h3><a href="#" title="Anh Đã Quen Với Cô Đơn">Anh Đã Quen Với Cô Đơn</a></h3>
+							<p class="singer"><a href="#" title="Soobin Hoàng Sơn">Soobin Hoàng Sơn</a></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="item">
+						<a href="#" class="thumb" title="Nơi Này Có Anh">
+							<img src="images/vd1.jpg" title="Nơi Này Có Anh" alt="">
+							<span class="icon_video_time">04:15</span>
+						</a>
+						<div class="item-caption">
+							<h3><a href="#" title="Nơi Này Có Anh">Nơi Này Có Anh</a></h3>
+							<p class="singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="item">
+						<a href="#" class="thumb" title="Lạc Trôi">
+							<img src="images/vd2.jpg" title="Lạc Trôi" alt="">
+							<span class="icon_video_time">04:15</span>
+						</a>
+						<div class="item-caption">
+							<h3><a href="#" title="Lạc Trôi">Lạc Trôi</a></h3>
+							<p class="singer"><a href="#" title="Sơn Tùng M-TP">Sơn Tùng M-TP</a></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="item">
+						<a href="#" class="thumb" title="Mic Jack (Single)">
+							<img src="images/vd3.jpg" title="Top 100 Bài Hát Nhạc Trẻ Hay Nhất" alt="">
+							<span class="icon_video_time">04:15</span>
+						</a>
+						<div class="item-caption">
+							<h3><a href="#" title="Có Được Không Em">Có Được Không Em</a></h3>
+							<p class="singer"><a href="#" title="Chi dân">Chi dân</a></p>
+						</div>
+						<div class="clearfix"></div>
+					</div>         
+				 
+                             
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!--/video list-->
+ 
+
+<div id="box_comment">
+	<div class="title_show ">
+		<div class="ykien_block">
+			<div class="fl"><strong>Bình luận</strong> (<label>42</label>) </div>
+			<div class="filter_coment"><a href="#">Mới nhất</a> | <a href="#" class="active">Quan tâm nhất</a></div>
+		</div>
+	</div>
+    <div class="main_show_comment">
+	<div class="comment_item">
+		<div class="fix-daily">
+			<p class="content_less" rel="content_more" style="display: block;">Có lần mình đi ăn cưới lúc tê tê cũng xung phong lên giống . Ở dưới đám trẻ trâu nó cũng lê tê phê nó kêu mình hát dỡ nói này nọ để kiếm chuyện . Mình bảo Lệ Rơi hát dỡ hơn tui còn dc lên TiVi ... <a class="icon_show_full_comment" rel="content_more" href="javascript:void(0);" alt="Xem đầy đủ nội dung" title="Xem đầy đủ nội dung">&nbsp;</a></p>
+			<p class="content_more" rel="content_less" style="display: none;">Có lần mình đi ăn cưới lúc tê tê cũng xung phong lên giống . Ở dưới đám trẻ trâu nó cũng lê tê phê nó kêu mình hát dỡ nói này nọ để kiếm chuyện . Mình bảo Lệ Rơi hát dỡ hơn tui còn dc lên TiVi . Thôi mấy anh xóm cứ để tui hát hò cho vui . Cười huề cả làng . Ko có chuyện gì nếu nóng nói lại bên nào cũng rượu vào dễ chết lắm . ))<a class="icon_show_full_comment icon_tru" rel="content_less" href="javascript:void(0);" alt="Thu gọn nội dung" title="Thu gọn nội dung">&nbsp;</a></p>
+			<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>quanghuy</b></a> - 22 giờ trước</span>
+				<p class="txt_11 block_like_web fr">
+				    <a id="tool-cm" class="txt_blue" href="javascript:void(0)" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:void(0)" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:void(0)">172</a>&nbsp;|&nbsp;<a id="tool-sharec" href="javascript:void(0)"  class="share_cmt_fb txt_blue">Chia sẻ</a>
+					<span class="block_share_cmt_fb this-block"><a data-type="facebook" href="javascript:;" title="Chia sẻ phản hồi lên facebook"><img src="css/images/icon_fb.gif"></a>&nbsp;<a data-type="google" href="javascript:;" title="Chia sẻ phản hồi lên google+"><img src="css/images/icon_google.gif"></a>&nbsp;<a data-type="twitter" href="javascript:;" title="Chia sẻ phản hồi lên twitter"><img src="css/images/icon_tw.gif"></a></span></p>
+			</div>
+		  
+			<div class="sub_comment"> 
+			    <div class="block_input_comment this-block">
+					<div class="input_comment">
+						<form id="comment_reply_form">
+							<textarea id="txtComment" value="Ý kiến của bạn"  class="h100 left block_input"  cols="" rel="" >Ý kiến của bạn</textarea>
+							<div class="width_common block_relative">
+							<div class="right">
+								<input type="button" value="Gửi" class="btn_send_comment" id="comment_reply_button">
+							</div>
+							<div class="left counter_world" style="display: none;"><strong>20</strong>/1000</div>
+							<div class="clear">&nbsp;</div>
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="subcomment_item fix-daily">
+					<p class="full_content">Người dân cũng là bố mẹ, bạn bè,... của họ. Tôn trọng mà vẫn có vài trăm dân chết à</p>
+					<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>Tinh Nguyen</b></a> - 13 giờ trước</span>
+					<p class="txt_11 block_like_web fr"><a class="txt_blue txt_11 link_reply" href="javascript:void(0)" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:;" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:;">172</a>&nbsp;|&nbsp;<a href="javascript:;"  class="share_cmt_fb txt_blue txt_11">Chia sẻ</a></p>
+					</div>
+				</div>
+				<div class="subcomment_item fix-daily">
+					<p class="full_content">Người dân cũng là bố mẹ, bạn bè,... của họ. Tôn trọng mà vẫn có vài trăm dân chết à</p>
+					<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>Tinh Nguyen</b></a> - 13 giờ trước</span>
+					<p class="txt_11 block_like_web fr"><a class="txt_blue txt_11 link_reply" href="javascript:void(0)" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:;" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:;">172</a>&nbsp;|&nbsp;<a href="javascript:;"  class="share_cmt_fb txt_blue txt_11">Chia sẻ</a></p>
+					</div>
+				</div>
+				<div class="subcomment_item fix-daily">
+					<p class="full_content">Người dân cũng là bố mẹ, bạn bè,... của họ. Tôn trọng mà vẫn có vài trăm dân chết à</p>
+					<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>Tinh Nguyen</b></a> - 13 giờ trước</span>
+					<p class="txt_11 block_like_web fr"><a class="txt_blue txt_11 link_reply" href="javascript:void(0)" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:;" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:;">172</a>&nbsp;|&nbsp;<a href="javascript:;"  class="share_cmt_fb txt_blue txt_11">Chia sẻ</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="txt_view_more clear_common"><a href="javascript:void(0)" class="txt_blue">Xem tất cả 11 trả lời</a></div>
+		</div>
+	</div><!--End-->
+	
+	<div class="comment_item hight_light">
+		<div class="fix-daily">
+			<p class="content_less" rel="content_more" style="display: block;">Có lần mình đi ăn cưới lúc tê tê cũng xung phong lên giống . Ở dưới đám trẻ trâu nó cũng lê tê phê nó kêu mình hát dỡ nói này nọ để kiếm chuyện . Mình bảo Lệ Rơi hát dỡ hơn tui còn dc lên TiVi ... <a class="icon_show_full_comment" rel="content_more" href="javascript:void(0);" alt="Xem đầy đủ nội dung" title="Xem đầy đủ nội dung">&nbsp;</a></p>
+			<p class="content_more" rel="content_less" style="display: none;">Có lần mình đi ăn cưới lúc tê tê cũng xung phong lên giống . Ở dưới đám trẻ trâu nó cũng lê tê phê nó kêu mình hát dỡ nói này nọ để kiếm chuyện . Mình bảo Lệ Rơi hát dỡ hơn tui còn dc lên TiVi . Thôi mấy anh xóm cứ để tui hát hò cho vui . Cười huề cả làng . Ko có chuyện gì nếu nóng nói lại bên nào cũng rượu vào dễ chết lắm . ))<a class="icon_show_full_comment icon_tru" rel="content_less" href="javascript:void(0);" alt="Thu gọn nội dung" title="Thu gọn nội dung">&nbsp;</a></p>
+			<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>quanghuy</b></a> - 22 giờ trước</span>
+				<p class="txt_11 block_like_web fr"><a class="txt_blue txt_11 link_reply" href="javascript:;" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:;" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:;">172</a>&nbsp;|&nbsp;<a href="javascript:;"  class="share_cmt_fb txt_blue txt_11">Chia sẻ</a></p>
+			</div>
+		  
+			<div class="sub_comment"> 
+				<div class="subcomment_item fix-daily">
+					<p class="full_content">Người dân cũng là bố mẹ, bạn bè,... của họ. Tôn trọng mà vẫn có vài trăm dân chết à</p>
+					<div class="user_status fix-daily"><a class="avata_coment" href="#"><img class="img_avatar" src="avatar/default_avatar.jpg"></a><span class="fl"><a class="nickname" href="#" title="" target="_blank"><b>Tinh Nguyen</b></a> - 13 giờ trước</span>
+					<p class="txt_11 block_like_web fr"><a class="txt_blue txt_11 link_reply" href="javascript:;" ><span class="icon_portal icon_feedback">&nbsp;</span> <b>Trả lời</b></a> &nbsp;|&nbsp;<a class="txt_666 txt_11 link_thich" href="javascript:;" >Thích&nbsp;<span class="icon_portal icon_like">&nbsp;</span></a>&nbsp;<a class="txt_666 txt_11 total_like" href="javascript:;">172</a>&nbsp;|&nbsp;<a href="javascript:;"  class="share_cmt_fb txt_blue txt_11">Chia sẻ</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!--End-->
+	
+    <div id="pagination">
+		<nav>
+			<ul class="pagination mrb">
+			<li class="active"><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li class="next"><a href="#" rel="next">Next →</a></li>
+		</ul>
+		</nav>
+	</div>
+	</div>
+	<div class="view_more_coment fl"><a href="javascript:void(0)" class="txt_666">Xem thêm</a></div>
+    
+	<div class="block_input_comment fix-daily">
+		<div class="input_comment">
+			<form id="comment_post_form">
+				<textarea id="txtComment" value="Ý kiến của bạn">Ý kiến của bạn</textarea>
+				<div class="width_common block_relative">
+					<div class="right block_btn_send">
+						<input type="button" value="Gửi" class="btn_send_comment">
+					</div>
+				</div> 
+			</form> 
+		</div>
+	</div>
+</div>
+<!--/box-comment-->
+Code chèn API Comment Facebook
+
+</div>
+<div class="sidebar">
+
+<div class="ads-box">
+	<div class="adv-300-destop"><img src="ads/ads_300x250.png" alt="Ads" width="300" height="250"></div>
+</div>
+<!--follow-->
+<div class="sb-follow">
+    <div class="xtitle"><h2 class="xtitle-name">Share dj.pro.vn</h2></div>
+    <div class="sb-follow-content">
+        <div id="socialshare" data-ayoshare="https://dj.pro.vn">
+		    <div class="ayoshare" id="ayoshare0">
+		         <p><a href="https://facebook.com" onclick="" class="ayo-facebook" title="Facebook"><i class="fa fa-facebook"></i> <span class="ayo_count_fb">1.6K</span></a></p>
+		         <p><a href="https://plus.google.com/" onclick="" class="ayo-google" title="Google+"><i class="icon-google-social"></i> <span class="ayo_count_gp">0</span></a></p>
+			     <p><a href="https://reddit.com/" onclick="" class="ayo-reddit" title="Reddit"><i class="fa fa-reddit"></i> <span class="ayo_count_rd">2</span></a></p>
+			     <p><a href="https://www.linkedin.com/" onclick="" class="ayo-linkedin" title="Linkedin"><i class="fa fa-linkedin"></i> <span class="ayo_count_in">28</span></a></p>
+			</div>
+		</div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!--/follow-->
+<div class="sb-suggestion-album">
+    <div class="xtitle">
+        <h2 class="xtitle-name">Suggestion</h2>
+        <div class="clearfix"></div>
+    </div>
+    <div class="video-list type-col-list billboard-list">
+			<div class="item item-big-video">
+				<a href="#" class="thumb">
+					<img src="images/alb-lactroi.jpg" alt="Lạc Trôi" title="Lạc Trôi">
+					<span class="icon_video_time">04:15</span>
+				</a>
+				<div class="item-caption-video">
+					<h3><a href="#" title="Lạc Trôi (Single)">Lạc Trôi (Single)</a></h3>
+					<p class="singer"><a href="#" title="Sơn Tùng">Sơn Tùng M-TP</a></p>
+					<div class="stats"><span class="mr5"><i class="fa fa-eye"></i> 213</span>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+                            
+            <div class="item item-big-video">
+				<a href="#" class="thumb">
+					<img src="images/is.jpg" alt="" title="">
+					<span class="icon_video_time">04:15</span>
+				</a>
+				<div class="item-caption-video">
+					<h3><a href="#" title="Anh Sẽ Về Sớm Thôi">Anh Sẽ Về Sớm Thôi</a></h3>
+					<p class="singer"><a href="#" title="Isaac">Isaac</a></p>
+					<div class="stats"><span class="mr5"><i class="fa fa-eye"></i> 13</span>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="item item-big-video">
+				<a href="#" class="thumb">
+					<img src="images/nq.jpg" alt="" title="">
+					<span class="icon_video_time">04:15</span>
+				</a>
+				<div class="item-caption-video">
+					<h3><a href="#" title="Nỗi buồn Châu Pha">Nỗi buồn Châu Pha</a></h3>
+					<p class="singer"><a href="#" title="Như Quỳnh">Như Quỳnh</a></p>
+					<div class="stats"><span class="mr5"><i class="fa fa-eye"></i> 313</span>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="item item-big-video">
+				<a href="#" class="thumb">
+					<img src="images/sr.jpg" alt="" title="">
+					<span class="icon_video_time">04:15</span>
+				</a>
+				<div class="item-caption-video">
+					<h3><a href="#" title="Chimes / Touch Base (Vinyl)">Chimes / Touch Base (Vinyl)</a></h3>
+					<p class="singer"><a href="#" title="Marusha">Marusha</a></p>
+					<div class="stats"><span class="mr5"><i class="fa fa-eye"></i> 213</span>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="item item-big-video">
+				<a href="#" class="thumb">
+					<img src="images/ckp.jpg" alt="" title="">
+					<span class="icon_video_time">04:15</span>
+				</a>
+				<div class="item-caption-video">
+					<h3><a href="#" title="Những Ngày Vui Trở Lại">Những Ngày Vui Trở Lại</a></h3>
+					<p class="singer">
+						<a href="#" title="Châu Khải Phong">Châu Khải Phong</a></p>
+					<div class="stats"><span class="mr5"><i class="fa fa-eye"></i> 2213</span>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+            <div class="clearfix"></div>
+    </div>
+</div>
+ 
+
+<div class="ads-box">
+	<div class="adv-300-destop"><img src="ads/ads_300x250.png" alt="Ads" width="300" height="250"></div>
+</div>
+ 
+<!--/fanpage-->
+</div>
+</div>
+</div><!--/main-->
+
+<!--footer-->
+<footer>
+    <div class="container xcontainer">
+        <div class="xline"><span></span></div>
+        <div class="footer-left pull-left">
+            <a href="#" id="logo-footer"><img src="css/images/logo.png" title="123music.to" alt="123music.to"></a>
+            <div class="footer-info">
+                <p class="title">dj.pro.vn - The Best Music Streaming</p>
+                <p class="copyright">Copyright 2017 © dj.pro.vn. All Rights Reserved</p>
+                <p class="disclaimer">Giấy phép "THIẾT LẬP MẠNG XÃ HỘI" số 334/GP-BTTTT do Bộ Thông tin và Truyền thông cấp ngày 21/7/2015.</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="footer-right pull-right text-right">
+            <div class="footer-menu">
+                <a href="#" title="">Điều khoản - Thỏa thuận</a> - <a href="#" title="">Liên hệ</a> - <a href="" title="FAQ">Hỏi đáp</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" title="" class="ml5"><i class="icon-facebook fa-2x"></i></a>
+                <a href="#" title="" class="ml5"><i class="icon-twitter fa-2x"></i></a>
+                <a href="#" title="" class="ml5"><i class="icon-google-plus fa-2x"></i></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer> <!--/footer-->
+</div>
+
+ 
+ 
+<div class="modal fade modal-cuz" id="pop-download" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:220px;">
+        <a class="close" data-dismiss="modal" aria-label="Close"><i class="icon-close"></i><font><font> CLOSE</font></font></a>
+		<div class="modal-content">
+			<div class="arrow" style="left: 50%;"></div>
+			<h3 class="popover-title">Download</h3>
+			<div class="popover-content" style="display: block;">
+			<div class="pds-content">
+				<p>
+				    <a data-quality="320" href="" download="" target="_blank" class="btn btn-block btn-sm btn-success pop-download-item">320kbps</a>
+				</p>
+				<p>
+					<a data-quality="128" href="" download="" target="_blank" class="btn btn-block btn-sm btn-success pop-download-item">128kbps</a>
+				</p>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-cuz" id="pop-add-playlist" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document" style="width:220px;">
+        <a class="close" data-dismiss="modal" aria-label="Close"><i class="icon-close"></i><font><font> CLOSE</font></font></a>
+		<div class="modal-content">
+			<div class="arrow" style="left: 50%;"></div>
+			<h3 class="popover-title">Add to playlist</h3>
+			<div class="popover-content" style="display: block;">
+			    <div class="mine-playlist pp-mine-playlist">
+					<ul id="pop-add-playlist" class="nonestyle mpt-ul">
+						<li class="">
+							<div class="mpt-name">O my goog</div>
+							<span class="badge">3</span>
+							<div class="clearfix"></div>
+						</li>
+					</ul>
+					<div class="mpt-creat">
+						<form id="playlist-popover-form" method="post">
+							<input required="" class="form-control" name="name" type="text" placeholder="Playlist name">
+							<button type="submit" class="btn btn-orange btn-sm" title="Add">
+								Add
+							</button>
+						</form>
+					</div>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal-main modal-report in" id="pop-report" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-close"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-warning"></i> Báo lỗi</h4>
+            </div>
+            <div class="modal-body">
+                <div id="report-success" class="alert alert-success mt10 error-message"></div>
+                <form id="report-form" role="form" method="post">
+                    <input type="hidden" name="type" value="album">
+                    <input type="hidden" name="obj_id" value="49337">
+                    <div class="report-textarea">
+                        <p>
+                             Vui lòng chọn cụ thể các mục bên dưới để thông báo cho chúng tôi biết vấn đề bạn gặp phải đối với bài hát này.
+                        </p>
+						<p><input type="radio" name="" value="Play quá chậm"> Play quá chậm</p>
+						<p><input type="radio" name="" value="Không play được"> Không play được</p>
+						<p><input type="radio" name="" value="Chất lượng kém"> Chất lượng kém</p>
+						<p><input type="radio" name="" value="Không download được"> Không download được</p>
+						<p><input type="radio" name="" value="Lỗi khác"> Lỗi khác</p>
+                    </div>
+                    <div class="captcha-code mt20">
+                        <div class="g-recaptcha" ><div style="width: 304px; height: 78px;"><div><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6Lc0ZggUAAAAAE5c7SzLG1JI0jXKqIiKZqRGFmZu&amp;co=aHR0cHM6Ly8xMjNtdXNpYy50bzo0NDM.&amp;hl=vi&amp;v=r20170411114922&amp;size=normal&amp;cb=ofbtmegwgmc8" title="tiện ích con mã xác thực lại" width="304" height="78" frameborder="0" scrolling="no" name="undefined"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div>
+                    </div>
+                    <div id="report-error" class="alert alert-danger mt10 error-message"></div>
+                    <div class="report-btn text-center mt20">
+                        <button id="report-submit" class="btn btn-orange mr5">Send</button>
+                        <button data-dismiss="modal" class="btn btn-default">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="pop-download-video-show" class="popover hidden"> 
+	<div class="popover-content">
+		<p>
+			<a href="#" target="_blank" class="btn btn-block btn-sm btn-primary">720p</a>
+		</p>
+		<p>
+			<a href="#" target="_blank" class="btn btn-block btn-sm btn-primary">480p</a>
+		</p>
+		<p>
+			<a href="#" target="_blank" class="btn btn-block btn-sm btn-primary">360p</a>
+		</p>
+	</div>
+</div> 
+
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/slide.min.js"></script>
+<script type="text/javascript" src="js/detectmobilebrowser.js"></script>
+<script type="text/javascript" src="js/jquery.newsTicker.js"></script>
+<script type="text/javascript" src="js/psbar.jquery.min.js"></script> 
+<script type="text/javascript" src="js/all.min.js"></script> 
+
+<script src="js/video.js"></script> 
+<script src="js/nuevo.min.js"></script>
+<script src="js/videojs.ads.min.js"></script>
+<script src="js/videojs-resolution-switcher.js"></script>
+<script src="js/Youtube.js"></script>
+<script>
+    videojs('play-video').videoJsResolutionSwitcher() 
+</script>
+<script>
+var player = videojs('play-video',nuevo,function(){ 
+	/*this.preroll({
+		src:{src:"https://ds-vn.serving-sys.com/BurstingRes/Site-43749/Type-28/4c747d23-5a4e-47c5-b3e5-b7db377d8621.webm",type:"video/webm"},
+		href:"http://dj.pro.vn",
+		skipTime:5
+	});*/
+	controlBar: {
+    volumeMenuButton: {
+      inline: false
+    }
+  }
+});
+</script>
+
+
+</body></html>

@@ -1,0 +1,49 @@
+@font-face {
+    font-family: 'player';
+    src:    url('../fonts/player.eot?ih4h1k');
+    src:    url('../fonts/player.eot?ih4h1k#iefix') format('embedded-opentype'),
+        url('../fonts/player.ttf?ih4h1k') format('truetype'),
+        url('../fonts/player.woff?ih4h1k') format('woff'),
+        url('../fonts/player.svg?ih4h1k#player') format('svg');
+    font-weight: normal;
+    font-style: normal;}
+
+[class^="player-"], [class*=" player-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'player' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;}
+
+.player-skip-left:before{content: "\e900";}
+.player-skip-right:before{content: "\e901";}
+.player-skip-prev:before{content: "\e902";}
+.player-skip-next:before{content: "\e903";}
+.player-repeat:before{content: "\e904";}
+.player-reload:before{content: "\e905";}
+.player-flag:before{content: "\e906";}
+.player-checked:before{content: "\e907";}
+.player-arrow-left:before{content: "\e908";}
+.player-setting:before{content: "\e909";}
+.player-collapsing:before{content: "\e90a";}
+.player-random:before{content: "\e90b";}
+.player-expand:before{content: "\e90c";}
+.player-volume-low:before{content: "\e90d";}
+.player-microphone:before{content: "\e90e";}
+.player-next:before{content: "\e90f";}
+.player-pause:before{content: "\e910";}
+.player-play:before{content: "\e911";}
+.player-previous:before{content: "\e912";}
+.player-refresh:before{content: "\e913";}
+.player-arrow-right:before{content: "\e914";}
+.player-share:before{content: "\e915";}
+.player-volume:before{content: "\e916";}
+.player-volume-high:before{content: "\e917";}
+

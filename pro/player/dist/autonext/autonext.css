@@ -1,0 +1,8 @@
+/* toggle auto */
+.autoplay *{transition: all 0.2s ease 0s; -webkit-transition: all 0.2s ease 0s;}
+.autoplay{ width: 46px; height: 20px; position: relative; border-radius: 10px; background: #00ca75; color: #fff; cursor: pointer; overflow: hidden;}
+.autoplay .pca-toggle{ position: absolute; top: 2px; left: 28px; height: 16px; width: 16px; border-radius: 50%; background: #fff;}
+.autoplay i{ position: absolute; top: 3px; left: 8px; opacity: 1; transition: all 0.2s ease 0s; -webkit-transition: all 0.2s ease 0s;}
+.autoplay.disable{ background: #666 !important;}
+.autoplay.disable .pca-toggle{ left: 2px;}
+.autoplay.disable i{ opacity: 0;}

@@ -1,0 +1,85 @@
+.mejs__qualities-button,
+.mejs-qualities-button {
+    position: relative;
+	width: 50px;
+	margin-right: 15px;
+}
+
+.mejs__qualities-button > button,
+.mejs-qualities-button > button {
+    background: transparent;
+    color: #ccc;
+    font-size: 12px;
+    line-height: normal;
+    margin: 11px 0 0;
+    width: 50px;
+}
+
+.mejs__qualities-selector,
+.mejs-qualities-selector {
+    position: absolute;
+    bottom: 33px;
+    min-width: 70px;
+    left: -13px;
+	border-radius: 3px;
+    background: rgba(0,0,0,0.8);
+    z-index: 4;
+}
+
+.mejs__qualities-selector ul,
+.mejs-qualities-selector ul {
+    display: block;
+    list-style-type: none !important;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+.mejs__qualities-selector li,
+.mejs-qualities-selector li {
+    padding: 4px 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #111;
+	color: #ccc;
+}
+.mejs__qualities-selector li:hover,
+.mejs-qualities-selector li:hover {
+    color: #00ca75 !important;
+}
+
+.mejs__qualities-selector input,
+.mejs-qualities-selector input {
+    clear: both;
+    float: left;
+    left: -1000px;
+    margin: 3px 3px 0 5px;
+    position: absolute;
+	display:table-cell;
+	cursor: pointer;
+}
+
+.mejs__qualities-selector label,
+.mejs-qualities-selector label {
+    cursor: pointer;
+    float: left;
+    font-size: 10px;
+    line-height: 15px;
+    padding: 4px 0 0;
+    width: 55px;
+	font-weight: 300;
+	text-align: center;
+}
+
+.mejs__qualities-selected,
+.mejs-qualities-selected {
+    color: #00ca75 !important;
+}
+.mejs__qualities-selector{
+	display:none;
+}
+.mejs__qualities-button:hover .mejs__qualities-selector{
+	display:block;
+}
+.mejs__qualities-button:focus .mejs__qualities-selector{
+	display:block;
+}
