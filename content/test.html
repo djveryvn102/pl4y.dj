@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Ad Manager Ad Refresh Example</title>
+
+__________________
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" ></script >
+
+<script>
+
+window.googletag = window.googletag || {cmd: []};
+
+var slot2;
+
+googletag.cmd.push(function() {
+
+slot1 = googletag.defineSlot('/21792955532/Lyric_336x280', [336, 280], 'div-gpt-ad-1713692328550-0').addService(googletag.pubads());googletag.pubads().enableSingleRequest();googletag.enableServices();setInterval(function () { console.log("Jatin");googletag.pubads().refresh([slot2]);}, 30000);});</script>
+<div id='div-gpt-ad-1713692328550-0'>
+    <script>
+        googletag.cmd.push(function() {
+            googletag.display('div-gpt-ad-1713692328550-0');
+        });
+    </script>
+</div>
+_______________________
+
+
+
     <!-- Include the Google Publisher Tag library -->
     <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
     <script>
@@ -55,50 +80,6 @@
 
 
     ________________________
-
-
-    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
-<script>
-    var googletag = googletag || {cmd: []};
-    googletag.cmd.push(function() {
-        var slot1 = googletag.defineSlot('/21792955532/Lyric_336x280', [336, 280], 'div-gpt-ad-1713692328550-0').setTargeting("Test_Mode", "ON").addService(googletag.pubads());
-        googletag.enableServices();
-
-        setInterval(function() {
-            googletag.pubads().refresh([slot1]);
-        }, 30000);
-    });
-</script>
-
-<div id='div-gpt-ad-1713692328550-0'>
-    <script>
-        googletag.cmd.push(function() {
-            googletag.display('div-gpt-ad-1713692328550-0');
-        });
-    </script>
-</div>
-
-
-______________________
-
-<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js" ></script >
-
-<script>
-
-window.googletag = window.googletag || {cmd: []};
-
-var slot2;
-
-googletag.cmd.push(function() {
-
-slot1 = googletag.defineSlot('/21792955532/Lyric_336x280', [336, 280], 'div-gpt-ad-1713692328550-0').addService(googletag.pubads());googletag.pubads().enableSingleRequest();googletag.enableServices();setInterval(function () { console.log("Jatin");googletag.pubads().refresh([slot2]);}, 30000);});</script>
-<div id='div-gpt-ad-1713692328550-0'>
-    <script>
-        googletag.cmd.push(function() {
-            googletag.display('div-gpt-ad-1713692328550-0');
-        });
-    </script>
-</div>
 
 </body>
 </html>
