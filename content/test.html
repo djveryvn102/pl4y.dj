@@ -10,21 +10,20 @@
         var googletag = googletag || {};
         googletag.cmd = googletag.cmd || [];
 
-        // Define the ad refresh function
+        // Function to refresh ad
         function refreshAd() {
-            // Clear previous ad content
             googletag.cmd.push(function() {
                 googletag.pubads().refresh();
             });
         }
 
-        // Define the refresh interval (in milliseconds)
+        // Define refresh interval (in milliseconds)
         var refreshInterval = 60000; // 60 seconds
 
         // Perform ad refresh every 'refreshInterval' milliseconds
         setInterval(refreshAd, refreshInterval);
 
-        // Function to initialize ad slots
+        // Function to initialize ads
         function initAds() {
             googletag.cmd.push(function() {
                 // Define ad unit path
