@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Publisher Tag</title>
+    <script type="text/javascript">
+        // set global variable if not already set
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+
+        // load asynchronously the GPT JavaScript library used by DFP,
+        // using SSL/HTTPS if necessary
+        (function() {
+            var gads   = document.createElement('script');
+            gads.async = true;
+            gads.type  = 'text/javascript';
+
+            var useSSL = 'https:' === document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') + '//www.googletagservices.com/tag/js/gpt.js';
+            var node =document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        // can be moved as well in the body
+        // if using async mode, wrap all the javascript into googletag.cmd.push!
+        googletag.cmd.push(function() {
+            // set page-level attributes for ad slots that serve AdSense
+            googletag.pubads().set("adsense_background_color", "FFFFFF");
+            googletag.pubads().setTargeting("topic","basketball");
+
+            // enables Single Request Architecture (SRA)
+            googletag.pubads().enableSingleRequest();
+
+            // Disable initial load, we will use refresh() to fetch ads.
+            // Calling this function means that display() calls just
+            // register the slot as ready, but do not fetch ads for it.
+            googletag.pubads().disableInitialLoad();
+
+            // Collapses empty div elements on a page when there is no ad content to display.
+            googletag.pubads().collapseEmptyDivs();
+
+            // Enables all GPT services that have been defined for ad slots on the page.
+            googletag.enableServices();
+        });
+    </script>
+</head>
+<body>
+
+    <div id="banner1" style="width:300px; height:250px;"></div>
+
+    <div id="banner2" style="width:300px; height:250px;"></div>
+
+    <script type="text/javascript">
+        // this code can be moved externally to improve performance
+        googletag.cmd.push(function() {
+            // define slot1
+            slot1 = googletag.defineSlot(
+                    "/1234/travel/asia/food",
+                    [728, 90],
+                    "banner1"
+                )
+                .addService(googletag.pubads())
+                .setTargeting(
+                    "interests",
+                    ["sports", "music", "movies"]
+                );
+            // prerender the slot but don't display it because of disableInitialLoad()
+            googletag.display("banner1");
+            
+            // define slot2    
+            slot2 = googletag.defineSlot(
+                    "/1234/travel/asia/food",
+                    [[468, 60], [728, 90], [300, 250]],
+                    "banner2"
+                )
+                .addService(googletag.pubads())
+                .setTargeting("gender", "male")
+                .setTargeting("age", "20-30");
+                
+            // prerender the slot but don't display it because of disableInitialLoad()
+            googletag.display("banner2");  
+            
+            
+            // add event to sign the slot as redered or not
+            googletag.pubads().addEventListener('slotRenderEnded', function(event) {
+                if (event.slot === slot1 || event.slot === slot2) {
+                    // do something related to the slot
+                }
+            });
+            
+            // refresh all container ads and show them
+            // very important to call refresh with an array to avoid 
+            // multiple callback to the registered event 
+            googletag.pubads().refresh([slot1, slot2]);
+        });
+    </script>
+</body>
+</html>
