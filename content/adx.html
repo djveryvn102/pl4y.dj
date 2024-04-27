@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ad Manager Ad Refresh Example</title>
+__________________1
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+    var googletag = googletag || {cmd: []}; // Tạo đối tượng googletag nếu chưa tồn tại
+    googletag.cmd.push(function() { // Thêm hàm callback vào hàng đợi
+        // Định nghĩa slot quảng cáo với kích thước 336x280
+        var slot1 = googletag.defineSlot('/52369533/Top-A', [336, 280], 'div-gpt-ad-1714174574300-0')
+            .addService(googletag.pubads()); // Thêm dịch vụ quảng cáo vào slot
+
+        // Hẹn giờ làm mới quảng cáo mỗi 10 giây
+        setInterval(function() {
+            googletag.pubads().refresh([slot1]);
+        }, 20000);
+
+        // Khi quảng cáo trở nên hiển thị, đợi 60 giây và sau đó làm mới
+        googletag.pubads().addEventListener('impressionViewable', function(event) {
+            var slot = event.slot;
+            setTimeout(function() {
+                googletag.pubads().refresh([slot]);
+            }, 60000); // 60 giây
+        });
+
+        // Kích hoạt dịch vụ quảng cáo và sử dụng lazy loading
+        googletag.pubads().enableLazyLoad({
+            fetchMarginPercent: 500,
+            renderMarginPercent: 200,
+            mobileScaling: 2.0
+        });
+
+        googletag.enableServices(); // Kích hoạt dịch vụ quảng cáo
+    });
+</script>
+
+<div id="div-gpt-ad-1714174574300-0" style="height:0;">
+<script>
+        googletag.cmd.push(function() {
+            googletag.display('div-gpt-ad-1714174574300-0'); // Hiển thị quảng cáo trong div
+        });
+    </script>
+</div>
+</body>
+</html>
