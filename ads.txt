@@ -1,2 +1,3 @@
-google.com, pub-3624218383026467, DIRECT, f08c47fec0942fa0
-google.com, pub-9672879099670226, DIRECT, f08c47fec0942fa0
+google.com, pub-3624218383026467, DIRECT, f08c47fec0942fa0 # Adsense
+google.com, pub-9672879099670226, DIRECT, f08c47fec0942fa0 # ADX
+google.com, pub-9672879099670226, DIRECT, f08c47fec0942fa0 # Old
