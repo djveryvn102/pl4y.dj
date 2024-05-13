@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- main css file -->
+<style type="text/css">
+            .container{ margin-left: auto;margin-right: auto;padding-left: 5px;padding-right: 5px;width:980px;max-width: 98%;}
+            .thumbnail-container {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            }
+
+            .thumbnail-image {
+                width: 50%;
+                height: 50%;
+                object-fit: cover;
+                border-radius: 10px;
+                aspect-ratio: 1 / 1; /* Äáº·t tá»· lá»‡ khung hĂ¬nh (1:1) */
+            }
+
+            @media only screen and (max-width: 500px) {
+                .thumbnail-container {
+                    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr)); /* Má»™t cá»™t Ä‘áº§y Ä‘á»§ chiá»u rá»™ng */
+                }
+            }
+            .center-button {
+                text-align: center;
+                margin-top: 20px; /* CÄƒn lá» top cho Ä‘áº¹p */
+            }
+
+            #confirmButton {
+            /* ThĂªm styles cho button náº¿u cáº§n */
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            }
+            .social-container {
+                display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;}
+
+            .social-item {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            }
+
+            .social-image {
+            width: 100px; /* KĂ­ch thÆ°á»›c áº£nh */
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%; /* Bo gĂ³c cho áº£nh trĂ²n */
+            margin-bottom: 10px; /* Khoáº£ng cĂ¡ch giá»¯a áº£nh vĂ  tĂªn */
+            }
+
+            .social-name {
+            font-size: 18px;
+            margin-bottom: 10px;
+            }
+
+            .select-button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            }
+            .select-button:hover {
+                background-color: #1a5899; /* MĂ u xanh nháº¡t khi hover */
+            }
+            .confirmation-form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+        
+            .thumbnail-container {
+            display: flex;
+            }
+
+            .thumbnail-wrapper {
+                position: relative;
+                margin-right: 10px; /* ThĂªm khoáº£ng cĂ¡ch giá»¯a 2 áº£nh náº¿u cáº§n */
+            }
+
+            .thumbnail-link {
+                display: block;
+            }
+
+            .image-container {
+                position: relative;
+            }
+
+            .play-icon,
+            .plus-ten-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50%;
+                height: 50%;
+                background-size: contain;
+            }
+
+            .play-icon {
+                background-image: url('https://img.smarttraffic.app/uploads/2023-12-25/1703524290168_play.png');
+            }
+
+            .plus-ten-icon {
+                background-image: url('https://img.smarttraffic.app/uploads/2023-12-25/1703524432317_10.png');
+            }
+
+            .thumbnail-image {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .small-age-warning {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 10%; /* Äiá»u chá»‰nh kĂ­ch thÆ°á»›c cá»§a hĂ¬nh áº£nh "18+" nhá» náº¿u cáº§n */
+            height: auto;
+            }
+
+        </style>
+    
+  </head>
+  <body> 
+
+<div class="center-button">
+               <h2>Video Call Confirmation</h2>
+                <p>To continue, please confirm that you are 18 years or older.</p>
+            <button id="confirmButton">🔞 I firm that I am 18 years old</button>
+            </div>
+            <script>
+                document.getElementById("confirmButton").addEventListener("click", function () {
+                    var isConfirmed = confirm("Are you sure you are 18 years old?");
+                    
+                    if (isConfirmed) {
+                        window.location.href = "https://album.icusocial.com/lesslie-polinesia/?view=very"; // Chuyển hướng khi xác nhận
+                    } else {
+                        window.location.href = "https://album.icusocial.com/lesslie-polinesia/ppteamlesslie_347077060_784809296501945_1530462679257979743_n-819x1024/"; // Chuyển hướng khi bấm cancel
+                    }
+                });
+            </script>
+            <h2 class="center-button">Private Content</h2>
+            <div class="container" align="center">
+            <div class="thumbnail-container"><div class="thumbnail-wrapper"><a href="https://album.icusocial.com/lesslie-polinesia/?view=very" class="thumbnail-link"><div class="image-container"><div class="play-icon"></div><img src="https://img.smarttraffic.app/uploads/2023-12-25/1703526140107_18-plus-age-restriction-icon.png" alt="18+" class="small-age-warning"><img class="thumbnail-image" src="https://album.icusocial.com/wp-content/uploads/2024/01/ppteamlesslie_347077060_784809296501945_1530462679257979743_n-819x1024-1.jpg" alt="Lesslie Polinesia"></div></a></div><div class="thumbnail-wrapper"><a href="https://album.icusocial.com/lesslie-polinesia/?view=very" class="thumbnail-link"><div class="image-container"><div class="plus-ten-icon"></div><img src="https://img.smarttraffic.app/uploads/2023-12-25/1703526140107_18-plus-age-restriction-icon.png" alt="18+" class="small-age-warning"><img class="thumbnail-image" src="https://album.icusocial.com/wp-content/uploads/2024/01/ppteamlesslie_276026160_241172271484992_818610165733127544_n-819x1024-1.jpg" alt="Lesslie Polinesia"></div></a></div></div></div>
+
+      </body>
+</html>
