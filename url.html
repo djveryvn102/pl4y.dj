@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình sao chép văn bản đa mục</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 800px;
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .description {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.5;
+        }
+        
+        .copy-item {
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            transition: all 0.3s;
+        }
+        
+        .copy-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .copy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .copy-title {
+            font-weight: 500;
+            color: #444;
+            font-size: 18px;
+        }
+        
+        .copy-content {
+            width: 100%;
+            min-height: 80px;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            resize: vertical;
+            transition: border-color 0.3s;
+            background-color: #f9f9f9;
+        }
+        
+        .copy-content:focus {
+            outline: none;
+            border-color: #2575fc;
+            background-color: white;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn {
+            background-color: #2575fc;
+            color: white;
+        }
+        
+        .copy-btn:hover {
+            background-color: #1a68e8;
+            transform: translateY(-2px);
+        }
+        
+        .clear-btn {
+            background-color: #f5f5f5;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+        
+        .clear-btn:hover {
+            background-color: #e9e9e9;
+        }
+        
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .notification.error {
+            background-color: #f44336;
+        }
+        
+        .global-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .global-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        
+        .copy-all-btn {
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .copy-all-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .clear-all-btn {
+            background-color: #ff9800;
+            color: white;
+        }
+        
+        .clear-all-btn:hover {
+            background-color: #e68900;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .global-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Trình sao chép văn bản đa mục</h1>
+        <p class="description">Quản lý và sao chép nhiều đoạn văn bản cùng lúc. Mỗi ô có thể sao chép độc lập.</p>
+        
+        <!-- Ô sao chép 1 -->
+        <div class="copy-item">
+            <div class="copy-header">
+                <span class="copy-title">Yahoo</span>
+            </div>
+            <textarea class="copy-content" placeholder="Nhập văn bản thứ nhất...">https://r.search.yahoo.com/_ylt=AwrjfnvIkdRo_QEAcBtXNyoA;_ylu=Y29sbwNncTEEcG9zAzEEdnRpZAMEc2VjA3Ny/RV=2/RE=1759971016/RO=10/RU=https%3a%2f%2fwww.9az.org%2f/RK=2/RS=piUeP2eSvxh1lPXxAPq7oLcOv1s-</textarea>
+            <div class="button-group">
+                <button class="copy-btn" data-index="1">Sao chép văn bản 1</button>
+                <button class="clear-btn" data-index="1">Xóa văn bản 1</button>
+            </div>
+        </div>
+        
+        <!-- Ô sao chép 2 -->
+        <div class="copy-item">
+            <div class="copy-header">
+                <span class="copy-title">bing</span>
+            </div>
+            <textarea class="copy-content" placeholder="Nhập văn bản thứ hai...">https://www.bing.com/ck/a?!&&p=36d3857751d900a4bf04147375c37173767d878711c421f0f9f88bbcbb1ff7a6JmltdHM9MTc1ODY3MjAwMA&ptn=3&ver=2&hsh=4&fclid=16bcf00b-ac83-64a1-218b-e679ad8d65a6&u=a1aHR0cHM6Ly93d3cuOWF6Lm9yZy8</textarea>
+            <div class="button-group">
+                <button class="copy-btn" data-index="2">Sao chép văn bản 2</button>
+                <button class="clear-btn" data-index="2">Xóa văn bản 2</button>
+            </div>
+        </div>
+        
+        <!-- Ô sao chép 3 -->
+        <div class="copy-item">
+            <div class="copy-header">
+                <span class="copy-title">Google search</span>
+            </div>
+            <textarea class="copy-content" placeholder="Nhập văn bản thứ ba...">https://www.google.com/url?client=internal-element-cse&cx=5a036fdf5ec8b90d9&q=https://www.9az.org/&sa=U&ved=2ahUKEwi9pqGu2fKPAxVck1YBHcsbFDEQFnoECAEQAQ&usg=AOvVaw2UjMbIgtGfRV5sMJaVp_KS</textarea>
+            <div class="button-group">
+                <button class="copy-btn" data-index="3">Sao chép văn bản 3</button>
+                <button class="clear-btn" data-index="3">Xóa văn bản 3</button>
+            </div>
+        </div>
+        
+        <!-- Ô sao chép 4 -->
+        <div class="copy-item">
+            <div class="copy-header">
+                <span class="copy-title">Google</span>
+            </div>
+            <textarea class="copy-content" placeholder="Nhập văn bản thứ tư...">https://www.google.com/url?q=https://www.9az.org/&usg=AOvVaw0QRkIQwOAY5LwVJ21KyfEk</textarea>
+            <div class="button-group">
+                <button class="copy-btn" data-index="4">Sao chép văn bản 4</button>
+                <button class="clear-btn" data-index="4">Xóa văn bản 4</button>
+            </div>
+        </div>
+        
+        <!-- Ô sao chép 5 -->
+        <div class="copy-item">
+            <div class="copy-header">
+                <span class="copy-title">X</span>
+            </div>
+            <textarea class="copy-content" placeholder="Nhập văn bản thứ năm...">https://t.co/2NoW3ELJp8</textarea>
+            <div class="button-group">
+                <button class="copy-btn" data-index="5">Sao chép văn bản 5</button>
+                <button class="clear-btn" data-index="5">Xóa văn bản 5</button>
+            </div>
+        </div>
+        
+        <!-- Các nút điều khiển toàn cục -->
+        <div class="global-controls">
+            <button class="global-btn copy-all-btn">Sao chép tất cả</button>
+            <button class="global-btn clear-all-btn">Xóa tất cả</button>
+        </div>
+    </div>
+    
+    <div class="notification" id="notification">Đã sao chép vào clipboard!</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const copyContents = document.querySelectorAll('.copy-content');
+            const copyBtns = document.querySelectorAll('.copy-btn');
+            const clearBtns = document.querySelectorAll('.clear-btn');
+            const copyAllBtn = document.querySelector('.copy-all-btn');
+            const clearAllBtn = document.querySelector('.clear-all-btn');
+            const notification = document.getElementById('notification');
+            
+            // Sao chép văn bản từ một ô cụ thể
+            copyBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    const content = document.querySelector(`.copy-content:nth-child(2)`);
+                    const textArea = copyContents[index-1];
+                    
+                    if (textArea.value.trim() === '') {
+                        showNotification(`Văn bản ${index} trống! Vui lòng nhập nội dung.`, 'error');
+                        return;
+                    }
+                    
+                    copyToClipboard(textArea.value, `văn bản ${index}`);
+                });
+            });
+            
+            // Xóa văn bản từ một ô cụ thể
+            clearBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const index = this.getAttribute('data-index');
+                    const textArea = copyContents[index-1];
+                    textArea.value = '';
+                    textArea.focus();
+                    showNotification(`Đã xóa văn bản ${index}`);
+                });
+            });
+            
+            // Sao chép tất cả văn bản
+            copyAllBtn.addEventListener('click', function() {
+                let allText = '';
+                let emptyCount = 0;
+                
+                copyContents.forEach((textArea, index) => {
+                    if (textArea.value.trim() !== '') {
+                        allText += `--- Văn bản ${index+1} ---\n${textArea.value}\n\n`;
+                    } else {
+                        emptyCount++;
+                    }
+                });
+                
+                if (emptyCount === copyContents.length) {
+                    showNotification('Tất cả các ô văn bản đều trống!', 'error');
+                    return;
+                }
+                
+                copyToClipboard(allText, 'tất cả văn bản');
+            });
+            
+            // Xóa tất cả văn bản
+            clearAllBtn.addEventListener('click', function() {
+                if (confirm('Bạn có chắc chắn muốn xóa tất cả văn bản?')) {
+                    copyContents.forEach(textArea => {
+                        textArea.value = '';
+                    });
+                    showNotification('Đã xóa tất cả văn bản');
+                }
+            });
+            
+            // Hàm sao chép vào clipboard
+            function copyToClipboard(text, description) {
+                navigator.clipboard.writeText(text).then(function() {
+                    showNotification(`Đã sao chép ${description} vào clipboard!`);
+                }).catch(function(err) {
+                    // Fallback cho trình duyệt cũ
+                    const textArea = document.createElement('textarea');
+                    textArea.value = text;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    showNotification(`Đã sao chép ${description} vào clipboard!`);
+                });
+            }
+            
+            // Hiển thị thông báo
+            function showNotification(message, type = 'success') {
+                notification.textContent = message;
+                
+                if (type === 'error') {
+                    notification.classList.add('error');
+                } else {
+                    notification.classList.remove('error');
+                }
+                
+                notification.classList.add('show');
+                
+                setTimeout(function() {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
