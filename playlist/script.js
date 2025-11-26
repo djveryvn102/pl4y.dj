@@ -34,6 +34,12 @@ const musicData = {
     tracks: []
 };
 
+// Download queue management
+const DOWNLOAD_QUEUE = {
+    items: [],
+    active: false
+};
+
 async function loadMusicData() {
     try {
         const response = await fetch('music-data.json');
@@ -97,6 +103,9 @@ function renderPlaylist() {
     let tracks = getFilteredTracks();
     const container = document.getElementById('playlistSection');
 
+    // Update search results info
+    updateSearchResultsInfo(tracks.length);
+
     if (tracks.length === 0) {
         container.innerHTML = `
             <div class="no-tracks">
@@ -113,9 +122,46 @@ function renderPlaylist() {
         const isFavorited = STATE.favorites.includes(track.id);
         const rating = STATE.ratings[track.id] || 0;
         const genre = musicData.genres.find(g => g.id === track.genre);
+        const playCount = STATE.history.filter(h => h.id === track.id).length;
+
+        // Insert ad every 5 tracks on mobile/tablet
+        const adInsert = (index > 0 && (index + 1) % 5 === 0) ? `
+            <div class="ad-infeed">
+                <div class="ad-container">
+                    <div class="ad-label">Advertisement</div>
+                    <div class="ad-placeholder-text">In-feed Ad 320x100</div>
+                </div>
+            </div>
+        ` : '';
 
         return `
-            <div class="playlist-item ${isActive ? 'active' : ''}" data-index="${index}" data-track-id="${track.id}">
+            ${adInsert}
+            <div class="playlist-item ${isActive ? 'active' : ''}" 
+                 data-index="${index}" 
+                 data-track-id="${track.id}"
+                 id="track-${track.id}">
+                
+                <!-- Hover Preview Tooltip -->
+                <div class="track-preview-tooltip">
+                    <img src="${track.image}" alt="${track.title}" class="tooltip-cover">
+                    <div class="tooltip-title">${track.title}</div>
+                    <div class="tooltip-artist">${track.artist}</div>
+                    <div class="tooltip-info">
+                        <div class="tooltip-info-item">
+                            <div class="tooltip-info-label">Thời Gian</div>
+                            <div class="tooltip-info-value">${track.duration}</div>
+                        </div>
+                        <div class="tooltip-info-item">
+                            <div class="tooltip-info-label">Đánh Giá</div>
+                            <div class="tooltip-info-value">${rating > 0 ? '⭐'.repeat(rating) : '-'}</div>
+                        </div>
+                        <div class="tooltip-info-item">
+                            <div class="tooltip-info-label">Lượt Nghe</div>
+                            <div class="tooltip-info-value">${playCount || 0}</div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="track-thumbnail">
                     <img src="${track.image}" alt="${track.title}" loading="lazy">
                 </div>
@@ -132,16 +178,20 @@ function renderPlaylist() {
                             `<span class="star ${star <= rating ? 'filled' : ''}" data-rating="${star}">⭐</span>`
                         ).join('')}
                     </div>
-                    <button class="track-btn ${isFavorited ? 'liked' : ''}" onclick="toggleFavorite(${track.id})" title="Yêu thích">
-                        ❤️
-                    </button>
+                    <button class="track-btn ${isFavorited ? 'liked' : ''}" 
+                            onclick="toggleFavorite(${track.id})" 
+                            title="Yêu thích">❤️</button>
                     <span class="track-duration">${track.duration}</span>
-                    <a href="${track.url}" download class="download-btn" title="Tải về">⬇️</a>
+                    <button class="download-btn" 
+                            onclick="downloadTrack(${track.id}, event)" 
+                            data-status="ready"
+                            title="Tải về">⬇️</button>
                 </div>
             </div>
         `;
     }).join('');
 
+    // Setup event listeners
     document.querySelectorAll('.playlist-item').forEach(item => {
         item.addEventListener('click', (e) => {
             if (!e.target.closest('.track-btn') && 
@@ -163,6 +213,11 @@ function renderPlaylist() {
     });
 
     updatePlaylistCounter();
+
+    // Auto scroll to first search result
+    if (document.getElementById('searchInput').value.trim()) {
+        scrollToFirstResult();
+    }
 }
 
 function getFilteredTracks() {
@@ -490,6 +545,209 @@ function importPlaylist() {
     input.click();
 }
 
+// ============= CHỨC NĂNG TÌM KIẾM CẢI TIẾN =============
+
+function updateSearchResultsInfo(count) {
+    const searchTerm = document.getElementById('searchInput').value.trim();
+    const infoBar = document.getElementById('searchResultsInfo');
+    const infoText = document.getElementById('searchResultsText');
+
+    if (searchTerm) {
+        infoText.textContent = `Tìm thấy ${count} kết quả cho "${searchTerm}"`;
+        infoBar.classList.add('active');
+        document.querySelector('.search-box').classList.add('has-results');
+    } else {
+        infoBar.classList.remove('active');
+        document.querySelector('.search-box').classList.remove('has-results');
+    }
+}
+
+function scrollToFirstResult() {
+    setTimeout(() => {
+        const firstItem = document.querySelector('.playlist-item');
+        if (firstItem) {
+            // Highlight first result
+            firstItem.classList.add('search-highlight');
+            
+            // Scroll to view
+            firstItem.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'center' 
+            });
+
+            // Remove highlight after animation
+            setTimeout(() => {
+                firstItem.classList.remove('search-highlight');
+            }, 4500);
+        }
+    }, 100);
+}
+
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    renderPlaylist();
+}
+
+// ============= CHỨC NĂNG TẢI XUỐNG CẢI TIẾN =============
+
+async function downloadTrack(trackId, event) {
+    event.stopPropagation();
+    
+    const track = musicData.tracks.find(t => t.id === trackId);
+    if (!track) return;
+
+    const downloadBtn = event.currentTarget;
+    
+    // Prevent multiple downloads
+    if (downloadBtn.dataset.status === 'downloading') {
+        showToast('⏳ Bài hát đang tải...');
+        return;
+    }
+
+    // Update button state
+    downloadBtn.dataset.status = 'downloading';
+    downloadBtn.innerHTML = '⏳';
+    downloadBtn.classList.add('downloading');
+
+    // Add to download queue
+    addToDownloadQueue(track);
+
+    try {
+        // Fetch the audio file
+        const response = await fetch(track.url);
+        if (!response.ok) throw new Error('Download failed');
+
+        // Get file size for progress tracking
+        const contentLength = response.headers.get('content-length');
+        const total = parseInt(contentLength, 10);
+        
+        const reader = response.body.getReader();
+        const chunks = [];
+        let received = 0;
+
+        // Read and track progress
+        while (true) {
+            const { done, value } = await reader.read();
+            
+            if (done) break;
+            
+            chunks.push(value);
+            received += value.length;
+            
+            // Update progress
+            const progress = (received / total) * 100;
+            updateDownloadProgress(trackId, progress);
+        }
+
+        // Create blob and download
+        const blob = new Blob(chunks, { type: 'audio/mpeg' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${track.artist} - ${track.title}.mp3`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+
+        // Update button state - success
+        downloadBtn.dataset.status = 'completed';
+        downloadBtn.innerHTML = '✓';
+        downloadBtn.classList.remove('downloading');
+        downloadBtn.classList.add('downloaded');
+
+        // Remove from queue
+        removeFromDownloadQueue(trackId);
+
+        showToast(`✅ Đã tải: ${track.title}`);
+
+        // Reset button after 3 seconds
+        setTimeout(() => {
+            downloadBtn.dataset.status = 'ready';
+            downloadBtn.innerHTML = '⬇️';
+            downloadBtn.classList.remove('downloaded');
+        }, 3000);
+
+    } catch (error) {
+        console.error('Download error:', error);
+        
+        // Update button state - error
+        downloadBtn.dataset.status = 'ready';
+        downloadBtn.innerHTML = '⬇️';
+        downloadBtn.classList.remove('downloading');
+        
+        removeFromDownloadQueue(trackId);
+        showToast('❌ Lỗi tải xuống');
+    }
+}
+
+function addToDownloadQueue(track) {
+    DOWNLOAD_QUEUE.items.push({
+        id: track.id,
+        title: track.title,
+        artist: track.artist,
+        progress: 0
+    });
+    
+    renderDownloadQueue();
+    
+    // Show queue if not already visible
+    if (!DOWNLOAD_QUEUE.active) {
+        document.getElementById('downloadQueue').classList.add('active');
+        DOWNLOAD_QUEUE.active = true;
+    }
+}
+
+function updateDownloadProgress(trackId, progress) {
+    const item = DOWNLOAD_QUEUE.items.find(i => i.id === trackId);
+    if (item) {
+        item.progress = Math.round(progress);
+        renderDownloadQueue();
+    }
+}
+
+function removeFromDownloadQueue(trackId) {
+    DOWNLOAD_QUEUE.items = DOWNLOAD_QUEUE.items.filter(i => i.id !== trackId);
+    renderDownloadQueue();
+    
+    // Hide queue if empty
+    if (DOWNLOAD_QUEUE.items.length === 0) {
+        setTimeout(() => {
+            document.getElementById('downloadQueue').classList.remove('active');
+            DOWNLOAD_QUEUE.active = false;
+        }, 2000);
+    }
+}
+
+function renderDownloadQueue() {
+    const container = document.getElementById('downloadQueueList');
+    
+    if (DOWNLOAD_QUEUE.items.length === 0) {
+        container.innerHTML = '<div style="text-align: center; color: var(--gray-text); padding: 20px;">Không có tải xuống nào</div>';
+        return;
+    }
+    
+    container.innerHTML = DOWNLOAD_QUEUE.items.map(item => `
+        <div class="download-item">
+            <div class="download-item-icon">${item.progress === 100 ? '✓' : '⬇️'}</div>
+            <div class="download-item-info">
+                <div class="download-item-name">${item.title}</div>
+                <div class="download-item-status">${item.artist} • ${item.progress}%</div>
+                <div class="download-progress-bar">
+                    <div class="download-progress-fill" style="width: ${item.progress}%"></div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function closeDownloadQueue() {
+    document.getElementById('downloadQueue').classList.remove('active');
+    DOWNLOAD_QUEUE.active = false;
+}
+
+// ============= KEYBOARD SHORTCUTS =============
+
 function setupKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
         if (e.target.tagName === 'INPUT') return;
@@ -528,6 +786,8 @@ function changeVolume(delta) {
     localStorage.setItem('volume', STATE.volume);
     showToast(`🔊 Volume: ${STATE.volume}%`);
 }
+
+// ============= EVENT LISTENERS =============
 
 function setupEventListeners() {
     const audio = document.getElementById('audioPlayer');
@@ -581,6 +841,7 @@ function setupEventListeners() {
         audio.currentTime = percent * audio.duration;
     });
 
+    // Search with debounce
     let searchTimeout;
     document.getElementById('searchInput').addEventListener('input', () => {
         clearTimeout(searchTimeout);
@@ -589,6 +850,14 @@ function setupEventListeners() {
         }, 300);
     });
 
+    // Clear search on ESC
+    document.getElementById('searchInput').addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            clearSearch();
+        }
+    });
+
+    // Tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -598,6 +867,8 @@ function setupEventListeners() {
         });
     });
 }
+
+// ============= UTILITY FUNCTIONS =============
 
 function formatTime(seconds) {
     if (isNaN(seconds)) return '0:00';
@@ -627,6 +898,8 @@ function hideShortcuts() {
 function toggleMenu() {
     document.getElementById('navLinks').classList.toggle('active');
 }
+
+// ============= INITIALIZATION =============
 
 document.addEventListener('DOMContentLoaded', () => {
     loadMusicData();

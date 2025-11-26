@@ -15,6 +15,19 @@
 <body>
     <!-- Header -->
     <header>
+        <!-- Google AdSense Header Banner (Desktop) -->
+<div class="ad-header-banner">
+    <div class="ad-container">
+        <div class="ad-label">Advertisement</div>
+        <!-- Google AdSense Code Here -->
+        <!-- Kích thước khuyến nghị: 728x90 (Desktop), 320x50 (Mobile) -->
+        <div class="ad-placeholder-text">
+            Google AdSense 728x90 Banner<br>
+            (Thay bằng code AdSense thực tế)
+        </div>
+    </div>
+</div>
+
         <nav>
             <div class="logo">
                 <span class="logo-icon">🎧</span>
@@ -44,7 +57,93 @@
     </div>
 
     <!-- Music Player -->
+ <!-- Main Content with Sidebar Ads -->
+<div class="main-content-wrapper">
     <main class="player-section">
+        <article class="player-wrapper">
+            <!-- Search Results Info -->
+            <div class="search-results-info" id="searchResultsInfo">
+                <span id="searchResultsText">Tìm thấy 0 kết quả</span>
+                <button class="search-clear-btn" onclick="clearSearch()">✕ Xóa</button>
+            </div>
+
+            <!-- Playlist Tabs -->
+            <div class="playlist-tabs">
+                <button class="tab-btn active" data-tab="all">🎵 Tất Cả</button>
+                <button class="tab-btn" data-tab="favorites">❤️ Yêu Thích</button>
+                <button class="tab-btn" data-tab="history">🕐 Lịch Sử</button>
+            </div>
+
+            <!-- Genre Filter -->
+            <div class="genre-filter">
+                <h3 class="genre-title">🎶 Thể Loại Nhạc</h3>
+                <div class="genre-buttons" id="genreButtons"></div>
+            </div>
+
+            <!-- Now Playing Section (giữ nguyên) -->
+            <div class="now-playing-section">
+                <!-- ... code cũ ... -->
+            </div>
+
+            <!-- Progress Section (giữ nguyên) -->
+            <div class="progress-section">
+                <!-- ... code cũ ... -->
+            </div>
+
+            <!-- Playlist Header -->
+            <div class="playlist-header">
+                <h3 class="playlist-title">🎼 Danh Sách Phát</h3>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <div class="playlist-actions">
+                        <button class="playlist-action-btn" onclick="exportPlaylist()">📥 Xuất</button>
+                        <button class="playlist-action-btn" onclick="importPlaylist()">📤 Nhập</button>
+                    </div>
+                    <div class="track-counter" id="trackCounter">0 bài hát</div>
+                </div>
+            </div>
+
+            <!-- Playlist Section -->
+            <section class="playlist-section" id="playlistSection"></section>
+            
+            <audio id="audioPlayer" preload="metadata"></audio>
+        </article>
+    </main>
+
+    <!-- Sidebar Ads (Desktop Only) -->
+    <aside class="ad-sidebar">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-placeholder-text">
+                Google AdSense 300x250<br>
+                Medium Rectangle
+            </div>
+        </div>
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-placeholder-text">
+                Google AdSense 300x600<br>
+                Half Page
+            </div>
+        </div>
+    </aside>
+</div>
+
+<!-- Footer Mobile Ad (Mobile Only) -->
+<div class="ad-footer-mobile">
+    <div class="ad-container">
+        <div class="ad-placeholder-text">AdSense 320x50</div>
+    </div>
+</div>
+
+<!-- Download Queue Notification -->
+<div class="download-queue" id="downloadQueue">
+    <div class="download-queue-header">
+        <div class="download-queue-title">⬇️ Đang Tải Xuống</div>
+        <button class="download-queue-close" onclick="closeDownloadQueue()">×</button>
+    </div>
+    <div id="downloadQueueList"></div>
+</div>
+
         <article class="player-wrapper">
             <!-- Playlist Tabs -->
             <div class="playlist-tabs">
