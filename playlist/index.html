@@ -15,19 +15,6 @@
 <body>
     <!-- Header -->
     <header>
-        <!-- Google AdSense Header Banner (Desktop) -->
-<div class="ad-header-banner">
-    <div class="ad-container">
-        <div class="ad-label">Advertisement</div>
-        <!-- Google AdSense Code Here -->
-        <!-- Kích thước khuyến nghị: 728x90 (Desktop), 320x50 (Mobile) -->
-        <div class="ad-placeholder-text">
-            Google AdSense 728x90 Banner<br>
-            (Thay bằng code AdSense thực tế)
-        </div>
-    </div>
-</div>
-
         <nav>
             <div class="logo">
                 <span class="logo-icon">🎧</span>
@@ -36,11 +23,21 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#" onclick="showShortcuts()">⌨️ Shortcuts</a></li>
+                <li><a href="#" onclick="showShortcuts(); return false;">⌨️ Shortcuts</a></li>
                 <li><a href="#about">About</a></li>
             </ul>
         </nav>
     </header>
+
+    <!-- Google AdSense Header Banner -->
+    <div class="ad-header-banner">
+        <div class="ad-container">
+            <div class="ad-label">Advertisement</div>
+            <div class="ad-placeholder-text">
+                Google AdSense 728x90 Banner (Desktop) / 320x50 (Mobile)
+            </div>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -56,177 +53,125 @@
         </div>
     </div>
 
-    <!-- Music Player -->
- <!-- Main Content with Sidebar Ads -->
-<div class="main-content-wrapper">
-    <main class="player-section">
-        <article class="player-wrapper">
-            <!-- Search Results Info -->
-            <div class="search-results-info" id="searchResultsInfo">
-                <span id="searchResultsText">Tìm thấy 0 kết quả</span>
-                <button class="search-clear-btn" onclick="clearSearch()">✕ Xóa</button>
-            </div>
-
-            <!-- Playlist Tabs -->
-            <div class="playlist-tabs">
-                <button class="tab-btn active" data-tab="all">🎵 Tất Cả</button>
-                <button class="tab-btn" data-tab="favorites">❤️ Yêu Thích</button>
-                <button class="tab-btn" data-tab="history">🕐 Lịch Sử</button>
-            </div>
-
-            <!-- Genre Filter -->
-            <div class="genre-filter">
-                <h3 class="genre-title">🎶 Thể Loại Nhạc</h3>
-                <div class="genre-buttons" id="genreButtons"></div>
-            </div>
-
-            <!-- Now Playing Section (giữ nguyên) -->
-            <div class="now-playing-section">
-                <!-- ... code cũ ... -->
-            </div>
-
-            <!-- Progress Section (giữ nguyên) -->
-            <div class="progress-section">
-                <!-- ... code cũ ... -->
-            </div>
-
-            <!-- Playlist Header -->
-            <div class="playlist-header">
-                <h3 class="playlist-title">🎼 Danh Sách Phát</h3>
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <div class="playlist-actions">
-                        <button class="playlist-action-btn" onclick="exportPlaylist()">📥 Xuất</button>
-                        <button class="playlist-action-btn" onclick="importPlaylist()">📤 Nhập</button>
-                    </div>
-                    <div class="track-counter" id="trackCounter">0 bài hát</div>
+    <!-- Main Content with Sidebar -->
+    <div class="main-content-wrapper">
+        <main class="player-section">
+            <article class="player-wrapper">
+                <!-- Search Results Info -->
+                <div class="search-results-info" id="searchResultsInfo">
+                    <span id="searchResultsText">Tìm thấy 0 kết quả</span>
+                    <button class="search-clear-btn" onclick="clearSearch()">✕ Xóa</button>
                 </div>
-            </div>
 
-            <!-- Playlist Section -->
-            <section class="playlist-section" id="playlistSection"></section>
-            
-            <audio id="audioPlayer" preload="metadata"></audio>
-        </article>
-    </main>
+                <!-- Playlist Tabs -->
+                <div class="playlist-tabs">
+                    <button class="tab-btn active" data-tab="all">🎵 Tất Cả</button>
+                    <button class="tab-btn" data-tab="favorites">❤️ Yêu Thích</button>
+                    <button class="tab-btn" data-tab="history">🕐 Lịch Sử</button>
+                </div>
 
-    <!-- Sidebar Ads (Desktop Only) -->
-    <aside class="ad-sidebar">
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-placeholder-text">
-                Google AdSense 300x250<br>
-                Medium Rectangle
-            </div>
-        </div>
-        <div class="ad-container">
-            <div class="ad-label">Advertisement</div>
-            <div class="ad-placeholder-text">
-                Google AdSense 300x600<br>
-                Half Page
-            </div>
-        </div>
-    </aside>
-</div>
+                <!-- Genre Filter -->
+                <div class="genre-filter">
+                    <h3 class="genre-title">🎶 Thể Loại Nhạc</h3>
+                    <div class="genre-buttons" id="genreButtons"></div>
+                </div>
 
-<!-- Footer Mobile Ad (Mobile Only) -->
-<div class="ad-footer-mobile">
-    <div class="ad-container">
-        <div class="ad-placeholder-text">AdSense 320x50</div>
-    </div>
-</div>
+                <!-- Now Playing -->
+                <div class="now-playing-section">
+                    <div class="album-art-container">
+                        <div class="album-art" id="albumArt">
+                            <div class="equalizer">
+                                <div class="equalizer-bar"></div>
+                                <div class="equalizer-bar"></div>
+                                <div class="equalizer-bar"></div>
+                                <div class="equalizer-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="player-info">
+                        <span class="track-genre-badge" id="currentGenreBadge">GENRE</span>
+                        <div class="artist-name" id="currentArtist">Chọn bài hát để phát</div>
+                        <h4 class="song-title" id="currentTitle">DJ Nonstop Mix</h4>
+                        
+                        <div class="song-actions">
+                            <button class="action-btn" id="likeBtn" title="Yêu thích">
+                                <span>❤️</span>
+                                <span style="font-size: 0.8em;">Thích</span>
+                            </button>
+                            <button class="action-btn" id="shareBtn" title="Chia sẻ">
+                                <span>🔗</span>
+                                <span style="font-size: 0.8em;">Chia sẻ</span>
+                            </button>
+                        </div>
 
-<!-- Download Queue Notification -->
-<div class="download-queue" id="downloadQueue">
-    <div class="download-queue-header">
-        <div class="download-queue-title">⬇️ Đang Tải Xuống</div>
-        <button class="download-queue-close" onclick="closeDownloadQueue()">×</button>
-    </div>
-    <div id="downloadQueueList"></div>
-</div>
-
-        <article class="player-wrapper">
-            <!-- Playlist Tabs -->
-            <div class="playlist-tabs">
-                <button class="tab-btn active" data-tab="all">🎵 Tất Cả</button>
-                <button class="tab-btn" data-tab="favorites">❤️ Yêu Thích</button>
-                <button class="tab-btn" data-tab="history">🕐 Lịch Sử</button>
-            </div>
-
-            <!-- Genre Filter -->
-            <div class="genre-filter">
-                <h3 class="genre-title">🎶 Thể Loại Nhạc</h3>
-                <div class="genre-buttons" id="genreButtons"></div>
-            </div>
-
-            <!-- Now Playing -->
-            <div class="now-playing-section">
-                <div class="album-art-container">
-                    <div class="album-art" id="albumArt">
-                        <div class="equalizer">
-                            <div class="equalizer-bar"></div>
-                            <div class="equalizer-bar"></div>
-                            <div class="equalizer-bar"></div>
-                            <div class="equalizer-bar"></div>
+                        <div class="player-controls">
+                            <button class="control-btn secondary-control" id="shuffleBtn" title="Shuffle">🔀</button>
+                            <button class="control-btn" id="prevBtn" title="Previous">◄</button>
+                            <button class="control-btn play-pause-btn" id="playBtn" title="Play">►</button>
+                            <button class="control-btn" id="nextBtn" title="Next">►</button>
+                            <button class="control-btn secondary-control" id="repeatBtn" title="Repeat">🔁</button>
+                            <div class="volume-control">
+                                <span class="volume-icon" id="volumeIcon">🔊</span>
+                                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="player-info">
-                    <span class="track-genre-badge" id="currentGenreBadge">GENRE</span>
-                    <div class="artist-name" id="currentArtist">Chọn bài hát để phát</div>
-                    <h4 class="song-title" id="currentTitle">DJ Nonstop Mix</h4>
-                    
-                    <div class="song-actions">
-                        <button class="action-btn" id="likeBtn" title="Yêu thích">
-                            <span>❤️</span>
-                            <span style="font-size: 0.8em;">Thích</span>
-                        </button>
-                        <button class="action-btn" id="shareBtn" title="Chia sẻ">
-                            <span>🔗</span>
-                            <span style="font-size: 0.8em;">Chia sẻ</span>
-                        </button>
-                    </div>
 
-                    <div class="player-controls">
-                        <button class="control-btn secondary-control" id="shuffleBtn" title="Shuffle">🔀</button>
-                        <button class="control-btn" id="prevBtn" title="Previous">◄</button>
-                        <button class="control-btn play-pause-btn" id="playBtn" title="Play">►</button>
-                        <button class="control-btn" id="nextBtn" title="Next">►</button>
-                        <button class="control-btn secondary-control" id="repeatBtn" title="Repeat">🔁</button>
-                        <div class="volume-control">
-                            <span class="volume-icon" id="volumeIcon">🔊</span>
-                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                <!-- Progress Bar -->
+                <div class="progress-section">
+                    <div class="progress-container" id="progressContainer">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="time-info">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalDuration">0:00</span>
+                    </div>
+                </div>
+
+                <!-- Playlist Header -->
+                <div class="playlist-header">
+                    <h3 class="playlist-title">🎼 Danh Sách Phát</h3>
+                    <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
+                        <div class="playlist-actions">
+                            <button class="playlist-action-btn" onclick="showTopTracks('plays')">🔥 Top Nghe</button>
+                            <button class="playlist-action-btn" onclick="showTopTracks('downloads')">⭐ Top Tải</button>
+                            <button class="playlist-action-btn" onclick="exportPlaylist()">📥 Xuất</button>
+                            <button class="playlist-action-btn" onclick="importPlaylist()">📤 Nhập</button>
                         </div>
+                        <div class="track-counter" id="trackCounter">0 bài hát</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Progress Bar -->
-            <div class="progress-section">
-                <div class="progress-container" id="progressContainer">
-                    <div class="progress-bar" id="progressBar"></div>
-                </div>
-                <div class="time-info">
-                    <span id="currentTime">0:00</span>
-                    <span id="totalDuration">0:00</span>
-                </div>
-            </div>
+                <section class="playlist-section" id="playlistSection"></section>
+                
+                <audio id="audioPlayer" preload="metadata"></audio>
+            </article>
+        </main>
 
-            <!-- Playlist Header -->
-            <div class="playlist-header">
-                <h3 class="playlist-title">🎼 Danh Sách Phát</h3>
-                <div style="display: flex; gap: 15px; align-items: center;">
-                    <div class="playlist-actions">
-                        <button class="playlist-action-btn" onclick="exportPlaylist()">📥 Xuất</button>
-                        <button class="playlist-action-btn" onclick="importPlaylist()">📤 Nhập</button>
-                    </div>
-                    <div class="track-counter" id="trackCounter">0 bài hát</div>
+        <!-- Sidebar Ads (Desktop) -->
+        <aside class="ad-sidebar">
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-placeholder-text">
+                    Google AdSense<br>300x250
                 </div>
             </div>
+            <div class="ad-container">
+                <div class="ad-label">Advertisement</div>
+                <div class="ad-placeholder-text">
+                    Google AdSense<br>300x600
+                </div>
+            </div>
+        </aside>
+    </div>
 
-            <section class="playlist-section" id="playlistSection"></section>
-            <audio id="audioPlayer" preload="metadata"></audio>
-        </article>
-    </main>
+    <!-- Footer Mobile Ad -->
+    <div class="ad-footer-mobile">
+        <div class="ad-container">
+            <div class="ad-placeholder-text">AdSense 320x50</div>
+        </div>
+    </div>
 
     <!-- Share Modal -->
     <div class="modal" id="shareModal">
@@ -289,8 +234,18 @@
         </div>
     </div>
 
+    <!-- Download Queue -->
+    <div class="download-queue" id="downloadQueue">
+        <div class="download-queue-header">
+            <div class="download-queue-title">⬇️ Đang Tải Xuống</div>
+            <button class="download-queue-close" onclick="closeDownloadQueue()">×</button>
+        </div>
+        <div id="downloadQueueList"></div>
+    </div>
+
     <div class="toast" id="toast"></div>
 
+    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section" id="about">
