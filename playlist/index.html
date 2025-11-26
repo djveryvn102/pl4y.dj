@@ -3,774 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player - Genre Filter</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-
-        .player-wrapper {
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-            width: 100%;
-            max-width: 900px;
-            overflow: hidden;
-        }
-
-        .genre-filter {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            padding: 20px 30px;
-            border-bottom: 2px solid #dee2e6;
-        }
-
-        .genre-title {
-            font-size: 0.9em;
-            color: #495057;
-            margin-bottom: 12px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .genre-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .genre-btn {
-            padding: 8px 20px;
-            border: 2px solid #dee2e6;
-            background: white;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9em;
-            font-weight: 500;
-            transition: all 0.3s;
-            color: #495057;
-        }
-
-        .genre-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .genre-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-color: transparent;
-            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        }
-
-        .genre-count {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.1);
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.85em;
-            margin-left: 5px;
-        }
-
-        .genre-btn.active .genre-count {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .now-playing-section {
-            background: linear-gradient(135deg, #434343 0%, #2d2d2d 100%);
-            color: white;
-            padding: 30px;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .album-art {
-            width: 140px;
-            height: 140px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5em;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .player-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .track-genre-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-            background: rgba(255, 255, 255, 0.2);
-        }
-
-        .artist-name {
-            font-size: 0.85em;
-            opacity: 0.8;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .song-title {
-            font-size: 1.8em;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .player-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .control-btn {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.8em;
-            cursor: pointer;
-            padding: 8px;
-            transition: all 0.2s;
-            opacity: 0.8;
-        }
-
-        .control-btn:hover {
-            opacity: 1;
-            transform: scale(1.15);
-        }
-
-        .play-pause-btn {
-            font-size: 2.5em;
-        }
-
-        .volume-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-left: auto;
-        }
-
-        .volume-icon {
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        .volume-slider {
-            width: 100px;
-            height: 4px;
-            -webkit-appearance: none;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 2px;
-            outline: none;
-            cursor: pointer;
-        }
-
-        .volume-slider::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 14px;
-            height: 14px;
-            background: white;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .volume-slider::-moz-range-thumb {
-            width: 14px;
-            height: 14px;
-            background: white;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-        }
-
-        .progress-section {
-            background: #3d3d3d;
-            padding: 0 30px 20px 30px;
-        }
-
-        .progress-container {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 2px;
-            cursor: pointer;
-            margin-bottom: 8px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: white;
-            border-radius: 2px;
-            width: 0%;
-            transition: width 0.1s;
-        }
-
-        .time-info {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85em;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .playlist-header {
-            padding: 20px 30px 10px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #f8f9fa;
-        }
-
-        .playlist-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #212529;
-        }
-
-        .track-counter {
-            font-size: 0.9em;
-            color: #6c757d;
-        }
-
-        .playlist-section {
-            padding: 0;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .playlist-section::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .playlist-section::-webkit-scrollbar-track {
-            background: #f0f0f0;
-        }
-
-        .playlist-section::-webkit-scrollbar-thumb {
-            background: #667eea;
-            border-radius: 4px;
-        }
-
-        .playlist-item {
-            display: flex;
-            align-items: center;
-            padding: 18px 30px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .playlist-item:hover {
-            background: #f8f9fa;
-        }
-
-        .playlist-item.active {
-            background: linear-gradient(90deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-            border-left: 4px solid #667eea;
-        }
-
-        .playlist-item:last-child {
-            border-bottom: none;
-        }
-
-        .track-emoji {
-            font-size: 2em;
-            margin-right: 15px;
-        }
-
-        .track-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .track-title {
-            font-size: 1.05em;
-            font-weight: 500;
-            margin-bottom: 5px;
-            color: #1a1a1a;
-        }
-
-        .track-artist {
-            font-size: 0.9em;
-            color: #888;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .track-meta {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .track-genre-label {
-            padding: 3px 10px;
-            border-radius: 10px;
-            font-size: 0.75em;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .track-duration {
-            font-size: 0.95em;
-            color: #666;
-        }
-
-        .no-tracks {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-
-        .no-tracks-icon {
-            font-size: 3em;
-            margin-bottom: 15px;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .genre-filter {
-                padding: 15px 20px;
-            }
-
-            .now-playing-section {
-                flex-direction: column;
-                text-align: center;
-                padding: 25px 20px;
-            }
-
-            .album-art {
-                width: 120px;
-                height: 120px;
-                font-size: 3em;
-            }
-
-            .song-title {
-                font-size: 1.4em;
-            }
-
-            .player-controls {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .volume-control {
-                margin-left: 0;
-                width: 100%;
-                justify-content: center;
-                margin-top: 15px;
-            }
-
-            .progress-section {
-                padding: 0 20px 15px 20px;
-            }
-
-            .playlist-header,
-            .playlist-item {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
-            .track-genre-label {
-                display: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .album-art {
-                width: 100px;
-                height: 100px;
-                font-size: 2.5em;
-            }
-
-            .song-title {
-                font-size: 1.2em;
-            }
-
-            .track-duration {
-                display: none;
-            }
-
-            .control-btn {
-                font-size: 1.5em;
-            }
-
-            .play-pause-btn {
-                font-size: 2em;
-            }
-
-            .genre-btn {
-                font-size: 0.85em;
-                padding: 6px 16px;
-            }
-        }
-    </style>
+    <meta name="description" content="DJ Nonstop Mix - Nghe và tải nhạc DJ, Remix, Nonstop chất lượng cao miễn phí">
+    <meta name="keywords" content="DJ, Nonstop, Remix, EDM, House Music, Techno">
+    <meta property="og:title" content="DJ Nonstop Mix - Music Player">
+    <meta property="og:description" content="Nghe nhạc DJ, Remix, Nonstop chất lượng cao">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=1200&h=630&fit=crop">
+    <title>DJ Nonstop Mix - Nghe và Tải Nhạc DJ Remix Hay Nhất 2025</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="player-wrapper">
-        <div class="genre-filter">
-            <div class="genre-title">🎵 Browse by Genre</div>
-            <div class="genre-buttons" id="genreButtons">
-                <div class="loading">Loading genres...</div>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🎧</span>
+                <h1 class="logo-text">DJ NONSTOP MIX</h1>
             </div>
-        </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#" onclick="showShortcuts()">⌨️ Shortcuts</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div class="now-playing-section">
-            <div class="album-art" id="albumArt">🎵</div>
-            <div class="player-info">
-                <span class="track-genre-badge" id="currentGenreBadge">Genre</span>
-                <div class="artist-name" id="currentArtist">Loading...</div>
-                <div class="song-title" id="currentTitle">Please wait</div>
-                <div class="player-controls">
-                    <button class="control-btn" id="prevBtn">◄</button>
-                    <button class="control-btn play-pause-btn" id="playBtn">►</button>
-                    <button class="control-btn" id="nextBtn">►</button>
-                    <div class="volume-control">
-                        <span class="volume-icon" id="volumeIcon">🔊</span>
-                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h2 class="hero-title">🎵 DJ NONSTOP MIX 2025 🎵</h2>
+        <p class="hero-subtitle">Nghe và tải nhạc DJ Remix, EDM, House Music chất lượng cao - Miễn phí 100%</p>
+    </section>
 
-        <div class="progress-section">
-            <div class="progress-container" id="progressContainer">
-                <div class="progress-bar" id="progressBar"></div>
-            </div>
-            <div class="time-info">
-                <span id="currentTime">0:00</span>
-                <span id="totalDuration">0:00</span>
-            </div>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài hát, nghệ sĩ, thể loại...">
+            <span class="search-icon">🔍</span>
         </div>
-
-        <div class="playlist-header">
-            <div class="playlist-title">📀 Playlist</div>
-            <div class="track-counter" id="trackCounter">0 tracks</div>
-        </div>
-
-        <div class="playlist-section" id="playlistSection">
-            <div class="loading">Loading playlist...</div>
-        </div>
-
-        <audio id="audioPlayer" preload="metadata"></audio>
     </div>
 
-    <script>
-        let allTracks = [];
-        let filteredTracks = [];
-        let genres = [];
-        let currentGenre = 'all';
-        let currentIndex = 0;
-        let isPlaying = false;
-        
-        const genreColors = {
-            'pop': '#e74c3c',
-            'greek': '#3498db',
-            'electronic': '#9b59b6',
-            'rock': '#e67e22',
-            'jazz': '#1abc9c',
-            'classical': '#f39c12',
-            'hiphop': '#e91e63',
-            'all': '#667eea'
-        };
+    <!-- Music Player -->
+    <main class="player-section">
+        <article class="player-wrapper">
+            <!-- Playlist Tabs -->
+            <div class="playlist-tabs">
+                <button class="tab-btn active" data-tab="all">🎵 Tất Cả</button>
+                <button class="tab-btn" data-tab="favorites">❤️ Yêu Thích</button>
+                <button class="tab-btn" data-tab="history">🕐 Lịch Sử</button>
+            </div>
 
-        const audioPlayer = document.getElementById('audioPlayer');
-        const playBtn = document.getElementById('playBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const volumeIcon = document.getElementById('volumeIcon');
-        const progressBar = document.getElementById('progressBar');
-        const progressContainer = document.getElementById('progressContainer');
-        const currentTimeEl = document.getElementById('currentTime');
-        const totalDurationEl = document.getElementById('totalDuration');
-        const currentTitle = document.getElementById('currentTitle');
-        const currentArtist = document.getElementById('currentArtist');
-        const albumArt = document.getElementById('albumArt');
-        const currentGenreBadge = document.getElementById('currentGenreBadge');
-        const playlistSection = document.getElementById('playlistSection');
-        const genreButtons = document.getElementById('genreButtons');
-        const trackCounter = document.getElementById('trackCounter');
+            <!-- Genre Filter -->
+            <div class="genre-filter">
+                <h3 class="genre-title">🎶 Thể Loại Nhạc</h3>
+                <div class="genre-buttons" id="genreButtons"></div>
+            </div>
 
-        function loadXML() {
-            fetch('https://play.dj/playlist/playlist.xml')
-                .then(response => response.text())
-                .then(data => {
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(data, 'text/xml');
-                    parseXML(xmlDoc);
-                })
-                .catch(error => {
-                    console.error('Error loading XML:', error);
-                    playlistSection.innerHTML = '<div class="loading">Error loading playlist</div>';
-                });
-        }
-
-        function parseXML(xmlDoc) {
-            const genreElements = xmlDoc.getElementsByTagName('genre');
-            genres = Array.from(genreElements).map(g => ({
-                id: g.getAttribute('id'),
-                name: g.getAttribute('name'),
-                color: g.getAttribute('color') || genreColors[g.getAttribute('id')] || '#667eea'
-            }));
-
-            const trackElements = xmlDoc.getElementsByTagName('track');
-            allTracks = Array.from(trackElements).map(track => ({
-                id: getXMLValue(track, 'id'),
-                title: getXMLValue(track, 'title'),
-                artist: getXMLValue(track, 'artist'),
-                album: getXMLValue(track, 'album'),
-                duration: parseInt(getXMLValue(track, 'duration')),
-                durationDisplay: getXMLValue(track, 'durationDisplay'),
-                src: getXMLValue(track, 'location'),
-                image: getXMLValue(track, 'image'),
-                thumbnail: getXMLValue(track, 'thumbnail'),
-                genre: getXMLValue(track, 'genre'),
-                year: getXMLValue(track, 'year')
-            }));
-
-            renderGenreButtons();
-            filterByGenre('all');
-            setupEventListeners();
-            audioPlayer.volume = volumeSlider.value / 100;
-        }
-
-        function getXMLValue(parent, tagName) {
-            const element = parent.getElementsByTagName(tagName)[0];
-            return element ? element.textContent : '';
-        }
-
-        function renderGenreButtons() {
-            genreButtons.innerHTML = '';
-            
-            genres.forEach(genre => {
-                const count = genre.id === 'all' 
-                    ? allTracks.length 
-                    : allTracks.filter(t => t.genre === genre.id).length;
-                
-                const btn = document.createElement('button');
-                btn.className = 'genre-btn';
-                btn.innerHTML = `${genre.name} <span class="genre-count">${count}</span>`;
-                btn.dataset.genre = genre.id;
-                
-                if (genre.id === 'all') {
-                    btn.classList.add('active');
-                }
-                
-                btn.addEventListener('click', () => filterByGenre(genre.id));
-                genreButtons.appendChild(btn);
-            });
-        }
-
-        function filterByGenre(genreId) {
-            currentGenre = genreId;
-            
-            document.querySelectorAll('.genre-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.genre === genreId);
-            });
-
-            filteredTracks = genreId === 'all' 
-                ? [...allTracks]
-                : allTracks.filter(t => t.genre === genreId);
-
-            currentIndex = 0;
-            
-            renderPlaylist();
-            
-            if (filteredTracks.length > 0) {
-                loadTrack(0);
-            } else {
-                showNoTracks();
-            }
-        }
-
-        function renderPlaylist() {
-            playlistSection.innerHTML = '';
-            trackCounter.textContent = `${filteredTracks.length} track${filteredTracks.length !== 1 ? 's' : ''}`;
-            
-            if (filteredTracks.length === 0) {
-                showNoTracks();
-                return;
-            }
-
-            filteredTracks.forEach((track, index) => {
-                const item = document.createElement('div');
-                item.className = 'playlist-item';
-                if (index === 0) item.classList.add('active');
-                
-                const genreColor = genreColors[track.genre] || '#667eea';
-                
-                item.innerHTML = `
-                    <div class="track-emoji">${track.image}</div>
-                    <div class="track-info">
-                        <div class="track-title">${track.title}</div>
-                        <div class="track-artist">${track.artist}</div>
+            <!-- Now Playing -->
+            <div class="now-playing-section">
+                <div class="album-art-container">
+                    <div class="album-art" id="albumArt">
+                        <div class="equalizer">
+                            <div class="equalizer-bar"></div>
+                            <div class="equalizer-bar"></div>
+                            <div class="equalizer-bar"></div>
+                            <div class="equalizer-bar"></div>
+                        </div>
                     </div>
-                    <div class="track-meta">
-                        <span class="track-genre-label" style="background: ${genreColor}20; color: ${genreColor}">
-                            ${track.genre}
-                        </span>
-                        <div class="track-duration">${track.durationDisplay}</div>
-                    </div>
-                `;
-                
-                item.addEventListener('click', () => {
-                    currentIndex = index;
-                    loadTrack(index);
-                    play();
-                });
-                
-                playlistSection.appendChild(item);
-            });
-        }
-
-        function showNoTracks() {
-            playlistSection.innerHTML = `
-                <div class="no-tracks">
-                    <div class="no-tracks-icon">🎵</div>
-                    <div>No tracks found in this genre</div>
                 </div>
-            `;
-            currentTitle.textContent = 'No tracks available';
-            currentArtist.textContent = 'Select another genre';
-            albumArt.textContent = '🎵';
-        }
+                <div class="player-info">
+                    <span class="track-genre-badge" id="currentGenreBadge">GENRE</span>
+                    <div class="artist-name" id="currentArtist">Chọn bài hát để phát</div>
+                    <h4 class="song-title" id="currentTitle">DJ Nonstop Mix</h4>
+                    
+                    <div class="song-actions">
+                        <button class="action-btn" id="likeBtn" title="Yêu thích">
+                            <span>❤️</span>
+                            <span style="font-size: 0.8em;">Thích</span>
+                        </button>
+                        <button class="action-btn" id="shareBtn" title="Chia sẻ">
+                            <span>🔗</span>
+                            <span style="font-size: 0.8em;">Chia sẻ</span>
+                        </button>
+                    </div>
 
-        function loadTrack(index) {
-            if (filteredTracks.length === 0) return;
-            
-            const track = filteredTracks[index];
-            
-            audioPlayer.src = track.src;
-            currentTitle.textContent = track.title;
-            currentArtist.textContent = track.artist;
-            albumArt.textContent = track.image;
-            totalDurationEl.textContent = track.durationDisplay;
-            
-            const genreInfo = genres.find(g => g.id === track.genre);
-            currentGenreBadge.textContent = genreInfo ? genreInfo.name : track.genre;
-            currentGenreBadge.style.background = genreColors[track.genre] || '#667eea';
-            
-            document.querySelectorAll('.playlist-item').forEach((item, i) => {
-                item.classList.toggle('active', i === index);
-            });
-        }
+                    <div class="player-controls">
+                        <button class="control-btn secondary-control" id="shuffleBtn" title="Shuffle">🔀</button>
+                        <button class="control-btn" id="prevBtn" title="Previous">◄</button>
+                        <button class="control-btn play-pause-btn" id="playBtn" title="Play">►</button>
+                        <button class="control-btn" id="nextBtn" title="Next">►</button>
+                        <button class="control-btn secondary-control" id="repeatBtn" title="Repeat">🔁</button>
+                        <div class="volume-control">
+                            <span class="volume-icon" id="volumeIcon">🔊</span>
+                            <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="70">
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        function play() {
-            if (filteredTracks.length === 0) return;
-            audioPlayer.play().catch(e => console.log('Play prevented:', e));
-            isPlaying = true;
-            playBtn.textContent = '❚❚';
-        }
+            <!-- Progress Bar -->
+            <div class="progress-section">
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-info">
+                    <span id="currentTime">0:00</span>
+                    <span id="totalDuration">0:00</span>
+                </div>
+            </div>
 
-        function pause() {
-            audioPlayer.pause();
-            isPlaying = false;
-            playBtn.textContent = '►';
-        }
+            <!-- Playlist Header -->
+            <div class="playlist-header">
+                <h3 class="playlist-title">🎼 Danh Sách Phát</h3>
+                <div style="display: flex; gap: 15px; align-items: center;">
+                    <div class="playlist-actions">
+                        <button class="playlist-action-btn" onclick="exportPlaylist()">📥 Xuất</button>
+                        <button class="playlist-action-btn" onclick="importPlaylist()">📤 Nhập</button>
+                    </div>
+                    <div class="track-counter" id="trackCounter">0 bài hát</div>
+                </div>
+            </div>
 
-        function togglePlay() {
-            if (filteredTracks.length === 0) return;
-            isPlaying ? pause() : play();
-        }
+            <section class="playlist-section" id="playlistSection"></section>
+            <audio id="audioPlayer" preload="metadata"></audio>
+        </article>
+    </main>
 
-        function prevTrack() {
-            if (filteredTracks.length === 0) return;
-            currentIndex = (currentIndex - 1 + filteredTracks.length) % filteredTracks.length;
-            loadTrack(currentIndex);
-            if (isPlaying) play();
-        }
+    <!-- Share Modal -->
+    <div class="modal" id="shareModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Chia Sẻ Bài Hát</h3>
+                <button class="close-modal" onclick="closeShareModal()">×</button>
+            </div>
+            <div class="share-buttons">
+                <button class="share-btn facebook" onclick="shareToSocial('facebook')">
+                    <span style="font-size: 2em;">📘</span>
+                    <span>Facebook</span>
+                </button>
+                <button class="share-btn twitter" onclick="shareToSocial('twitter')">
+                    <span style="font-size: 2em;">🐦</span>
+                    <span>Twitter</span>
+                </button>
+                <button class="share-btn telegram" onclick="shareToSocial('telegram')">
+                    <span style="font-size: 2em;">✈️</span>
+                    <span>Telegram</span>
+                </button>
+                <button class="share-btn whatsapp" onclick="shareToSocial('whatsapp')">
+                    <span style="font-size: 2em;">💬</span>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="share-btn copy" onclick="copyShareLink()">
+                    <span style="font-size: 2em;">📋</span>
+                    <span>Copy Link</span>
+                </button>
+            </div>
+            <input type="text" class="share-link-input" id="shareLinkInput" readonly>
+        </div>
+    </div>
 
-        function nextTrack() {
-            if (filteredTracks.length === 0) return;
-            currentIndex = (currentIndex + 1) % filteredTracks.length;
-            loadTrack(currentIndex);
-            if (isPlaying) play();
-        }
+    <!-- Keyboard Shortcuts Help -->
+    <div class="shortcuts-help" id="shortcutsHelp">
+        <div class="modal-header">
+            <h3 class="modal-title">⌨️ Phím Tắt</h3>
+            <button class="close-modal" onclick="hideShortcuts()">×</button>
+        </div>
+        <div class="shortcut-item">
+            <span>Play/Pause</span>
+            <span class="shortcut-key">Space</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Next Track</span>
+            <span class="shortcut-key">N</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Previous Track</span>
+            <span class="shortcut-key">P</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Volume</span>
+            <span class="shortcut-key">↑ ↓</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Like Song</span>
+            <span class="shortcut-key">L</span>
+        </div>
+    </div>
 
-        function formatTime(seconds) {
-            if (isNaN(seconds)) return '0:00';
-            const mins = Math.floor(seconds / 60);
-            const secs = Math.floor(seconds % 60);
-            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
-        }
+    <div class="toast" id="toast"></div>
 
-        function updateVolumeIcon(value) {
-            if (value == 0) volumeIcon.textContent = '🔇';
-            else if (value < 50) volumeIcon.textContent = '🔉';
-            else volumeIcon.textContent = '🔊';
-        }
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" id="about">
+                <h3>About DJ Nonstop Mix</h3>
+                <p>Nền tảng nghe nhạc DJ, Remix, Nonstop với playlist cá nhân, chia sẻ mạng xã hội.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DJ Nonstop Mix. All rights reserved.</p>
+        </div>
+    </footer>
 
-        function setupEventListeners() {
-            playBtn.addEventListener('click', togglePlay);
-            prevBtn.addEventListener('click', prevTrack);
-            nextBtn.addEventListener('click', nextTrack);
-
-            volumeSlider.addEventListener('input', (e) => {
-                audioPlayer.volume = e.target.value / 100;
-                updateVolumeIcon(e.target.value);
-            });
-
-            volumeIcon.addEventListener('click', () => {
-                if (audioPlayer.volume > 0) {
-                    audioPlayer.volume = 0;
-                    volumeSlider.value = 0;
-                    volumeIcon.textContent = '🔇';
-                } else {
-                    audioPlayer.volume = 0.7;
-                    volumeSlider.value = 70;
-                    volumeIcon.textContent = '🔊';
-                }
-            });
-
-            audioPlayer.addEventListener('timeupdate', () => {
-                const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
-                progressBar.style.width = `${progress}%`;
-                currentTimeEl.textContent = formatTime(audioPlayer.currentTime);
-            });
-
-            audioPlayer.addEventListener('loadedmetadata', () => {
-                totalDurationEl.textContent = formatTime(audioPlayer.duration);
-            });
-
-            progressContainer.addEventListener('click', (e) => {
-                const rect = progressContainer.getBoundingClientRect();
-                const percent = (e.clientX - rect.left) / rect.width;
-                audioPlayer.currentTime = percent * audioPlayer.duration;
-            });
-
-            audioPlayer.addEventListener('ended', nextTrack);
-        }
-
-        loadXML();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+{
+  "tracks": [
+    {
+      "id": 1,
+      "title": "Electric Dreams",
+      "artist": "DJ Nonstop",
+      "genre": "edm",
+      "duration": "4:23",
+      "url": "https://cdn.pixabay.com/audio/2022/03/10/audio_4f01b37c05.mp3",
+      "image": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 2,
+      "title": "Future Bass Energy",
+      "artist": "DJ Alex",
+      "genre": "edm",
+      "duration": "3:45",
+      "url": "https://cdn.pixabay.com/audio/2022/05/27/audio_1808fbf07a.mp3",
+      "image": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 3,
+      "title": "Neon Lights",
+      "artist": "DJ Storm",
+      "genre": "edm",
+      "duration": "5:12",
+      "url": "https://cdn.pixabay.com/audio/2022/03/24/audio_c8a891f77e.mp3",
+      "image": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 4,
+      "title": "Deep House Vibes",
+      "artist": "DJ Mike",
+      "genre": "house",
+      "duration": "4:38",
+      "url": "https://cdn.pixabay.com/audio/2022/10/25/audio_43a5a3c54c.mp3",
+      "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 5,
+      "title": "Funky House Night",
+      "artist": "DJ Soul",
+      "genre": "house",
+      "duration": "5:22",
+      "url": "https://cdn.pixabay.com/audio/2022/11/22/audio_23ef891d26.mp3",
+      "image": "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 6,
+      "title": "Dark Techno Underground",
+      "artist": "DJ Shadow",
+      "genre": "techno",
+      "duration": "6:08",
+      "url": "https://cdn.pixabay.com/audio/2022/06/07/audio_d2c6b3e8aa.mp3",
+      "image": "https://images.unsplash.com/photo-1598387846055-da11e0d6f491?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 7,
+      "title": "Summertime Remix",
+      "artist": "DJ Remix Pro",
+      "genre": "remix",
+      "duration": "4:18",
+      "url": "https://cdn.pixabay.com/audio/2023/05/23/audio_1a4e5b8c77.mp3",
+      "image": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 8,
+      "title": "Nonstop Party Mix Vol.1",
+      "artist": "DJ Nonstop King",
+      "genre": "nonstop",
+      "duration": "8:45",
+      "url": "https://cdn.pixabay.com/audio/2023/07/28/audio_5e7b9c4d11.mp3",
+      "image": "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 9,
+      "title": "Vinahouse Sài Gòn",
+      "artist": "DJ Saigon",
+      "genre": "vinahouse",
+      "duration": "5:38",
+      "url": "https://cdn.pixabay.com/audio/2023/09/05/audio_3b6e8c2d55.mp3",
+      "image": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300&h=300&fit=crop"
+    },
+    {
+      "id": 10,
+      "title": "Dubstep Revolution",
+      "artist": "DJ Bass",
+      "genre": "edm",
+      "duration": "4:15",
+      "url": "https://cdn.pixabay.com/audio/2023/01/25/audio_5b8e9c3d44.mp3",
+      "image": "https://images.unsplash.com/photo-1571330735066-03aaa9429d89?w=300&h=300&fit=crop"
+    }
+  ]
+}
