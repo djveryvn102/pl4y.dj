@@ -521,7 +521,7 @@
         const trackCounter = document.getElementById('trackCounter');
 
         function loadXML() {
-            fetch('playlist.xml')
+            fetch('https://play.dj/playlist/playlist.xml')
                 .then(response => response.text())
                 .then(data => {
                     const parser = new DOMParser();
