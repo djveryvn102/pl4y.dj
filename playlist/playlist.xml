@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist version="1.0">
+    <info>
+        <title>Music Collection 2025</title>
+        reator>My Playlist</creator>
+        <date>2025-11-26</date>
+    </info>
+    <genres>
+        <genre id="all" name="All" color="#667eea"/>
+        <genre id="pop" name="Pop" color="#e74c3c"/>
+        <genre id="greek" name="Greek" color="#3498db"/>
+        <genre id="electronic" name="Electronic" color="#9b59b6"/>
+        <genre id="rock" name="Rock" color="#e67e22"/>
+        <genre id="jazz" name="Jazz" color="#1abc9c"/>
+        <genre id="classical" name="Classical" color="#f39c12"/>
+        <genre id="hiphop" name="Hip Hop" color="#e91e63"/>
+    </genres>
+    <trackList>
+        <!-- Pop Tracks -->
+        <track>
+            <id>track_001</id>
+            <title>BLINDING LIGHTS</title>
+            <artist>THE WEEKND</artist>
+            <album>After Hours</album>
+            <duration>200</duration>
+            <durationDisplay>3:20</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3</location>
+            <image>🌟</image>
+            <thumbnail>images/blinding-lights.jpg</thumbnail>
+            <genre>pop</genre>
+            <year>2019</year>
+        </track>
+        <track>
+            <id>track_005</id>
+            <title>DANCE MONKEY</title>
+            <artist>TONES AND I</artist>
+            <album>The Kids Are Coming</album>
+            <duration>209</duration>
+            <durationDisplay>3:29</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3</location>
+            <image>🐒</image>
+            <thumbnail>images/dance-monkey.jpg</thumbnail>
+            <genre>pop</genre>
+            <year>2019</year>
+        </track>
+        <track>
+            <id>track_009</id>
+            <title>LEVITATING</title>
+            <artist>DUA LIPA</artist>
+            <album>Future Nostalgia</album>
+            <duration>203</duration>
+            <durationDisplay>3:23</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3</location>
+            <image>✨</image>
+            <thumbnail>images/levitating.jpg</thumbnail>
+            <genre>pop</genre>
+            <year>2020</year>
+        </track>
+        
+        <!-- Greek Tracks -->
+        <track>
+            <id>track_002</id>
+            <title>ΒΑΛ' ΤΟ ΤΕΡΜΑ</title>
+            <artist>ΝΙΚΟΣ ΟΙΚΟΝΟΜΟΠΟΥΛΟΣ</artist>
+            <album>Singles</album>
+            <duration>285</duration>
+            <durationDisplay>4:45</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3</location>
+            <image>🎤</image>
+            <thumbnail>images/val-to-terma.jpg</thumbnail>
+            <genre>greek</genre>
+            <year>2024</year>
+        </track>
+        <track>
+            <id>track_003</id>
+            <title>ΜΑΖΙ ΣΟΥ</title>
+            <artist>ΚΩΝΣΤΑΝΤΙΝΟΣ ΑΡΓΥΡΟΣ</artist>
+            <album>Best Hits</album>
+            <duration>206</duration>
+            <durationDisplay>3:26</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3</location>
+            <image>💫</image>
+            <thumbnail>images/mazi-sou.jpg</thumbnail>
+            <genre>greek</genre>
+            <year>2023</year>
+        </track>
+        <track>
+            <id>track_004</id>
+            <title>ΕΛΑ ΜΑΖΙ ΜΟΥ</title>
+            <artist>ΕΛΕΩΝΟΡΑ ΖΟΥΓΑΝΕΛΗ</artist>
+            <album>Collection</album>
+            <duration>203</duration>
+            <durationDisplay>3:23</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3</location>
+            <image>🎶</image>
+            <thumbnail>images/ela-mazi-mou.jpg</thumbnail>
+            <genre>greek</genre>
+            <year>2022</year>
+        </track>
+        <track>
+            <id>track_010</id>
+            <title>ΤΑ ΚΑΛΟΚΑΙΡΙΑ</title>
+            <artist>ΠΑΝΟΣ ΜΟΥΖΟΥΡΑΚΗΣ</artist>
+            <album>Summer Hits</album>
+            <duration>234</duration>
+            <durationDisplay>3:54</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3</location>
+            <image>☀️</image>
+            <thumbnail>images/ta-kalokeria.jpg</thumbnail>
+            <genre>greek</genre>
+            <year>2023</year>
+        </track>
+        
+        <!-- Electronic Tracks -->
+        <track>
+            <id>track_006</id>
+            <title>ELECTRIC DREAMS</title>
+            <artist>NEON PULSE</artist>
+            <album>Digital Wave</album>
+            <duration>245</duration>
+            <durationDisplay>4:05</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3</location>
+            <image>⚡</image>
+            <thumbnail>images/electric-dreams.jpg</thumbnail>
+            <genre>electronic</genre>
+            <year>2024</year>
+        </track>
+        <track>
+            <id>track_011</id>
+            <title>CYBER NIGHTS</title>
+            <artist>SYNTH MASTERS</artist>
+            <album>Neon City</album>
+            <duration>267</duration>
+            <durationDisplay>4:27</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3</location>
+            <image>🌆</image>
+            <thumbnail>images/cyber-nights.jpg</thumbnail>
+            <genre>electronic</genre>
+            <year>2024</year>
+        </track>
+        <track>
+            <id>track_012</id>
+            <title>PULSE WAVE</title>
+            <artist>DJ ELECTRONICA</artist>
+            <album>Bass Drop</album>
+            <duration>189</duration>
+            <durationDisplay>3:09</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3</location>
+            <image>🔊</image>
+            <thumbnail>images/pulse-wave.jpg</thumbnail>
+            <genre>electronic</genre>
+            <year>2025</year>
+        </track>
+        
+        <!-- Rock Tracks -->
+        <track>
+            <id>track_007</id>
+            <title>THUNDERSTRUCK</title>
+            <artist>ROCK LEGENDS</artist>
+            <album>Greatest Hits</album>
+            <duration>298</duration>
+            <durationDisplay>4:58</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3</location>
+            <image>🎸</image>
+            <thumbnail>images/thunderstruck.jpg</thumbnail>
+            <genre>rock</genre>
+            <year>2020</year>
+        </track>
+        <track>
+            <id>track_013</id>
+            <title>HIGHWAY ANTHEM</title>
+            <artist>STEEL WARRIORS</artist>
+            <album>Road to Glory</album>
+            <duration>312</duration>
+            <durationDisplay>5:12</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3</location>
+            <image>🏍️</image>
+            <thumbnail>images/highway-anthem.jpg</thumbnail>
+            <genre>rock</genre>
+            <year>2021</year>
+        </track>
+        
+        <!-- Jazz Tracks -->
+        <track>
+            <id>track_008</id>
+            <title>SMOOTH NIGHT</title>
+            <artist>JAZZ COLLECTIVE</artist>
+            <album>Evening Sessions</album>
+            <duration>324</duration>
+            <durationDisplay>5:24</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3</location>
+            <image>🎺</image>
+            <thumbnail>images/smooth-night.jpg</thumbnail>
+            <genre>jazz</genre>
+            <year>2023</year>
+        </track>
+        <track>
+            <id>track_014</id>
+            <title>MOONLIGHT SERENADE</title>
+            <artist>THE JAZZ QUARTET</artist>
+            <album>Blue Notes</album>
+            <duration>276</duration>
+            <durationDisplay>4:36</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3</location>
+            <image>🌙</image>
+            <thumbnail>images/moonlight.jpg</thumbnail>
+            <genre>jazz</genre>
+            <year>2022</year>
+        </track>
+        <track>
+            <id>track_015</id>
+            <title>VELVET SWING</title>
+            <artist>SMOOTH JAZZ BAND</artist>
+            <album>Late Night Vibes</album>
+            <duration>298</duration>
+            <durationDisplay>4:58</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3</location>
+            <image>🎷</image>
+            <thumbnail>images/velvet-swing.jpg</thumbnail>
+            <genre>jazz</genre>
+            <year>2024</year>
+        </track>
+        
+        <!-- Classical Tracks -->
+        <track>
+            <id>track_016</id>
+            <title>PIANO CONCERTO NO. 5</title>
+            <artist>SYMPHONY ORCHESTRA</artist>
+            <album>Classical Masterpieces</album>
+            <duration>423</duration>
+            <durationDisplay>7:03</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3</location>
+            <image>🎹</image>
+            <thumbnail>images/piano-concerto.jpg</thumbnail>
+            <genre>classical</genre>
+            <year>2023</year>
+        </track>
+        <track>
+            <id>track_017</id>
+            <title>VIOLIN SONATA</title>
+            <artist>CHAMBER ENSEMBLE</artist>
+            <album>Baroque Collection</album>
+            <duration>356</duration>
+            <durationDisplay>5:56</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3</location>
+            <image>🎻</image>
+            <thumbnail>images/violin-sonata.jpg</thumbnail>
+            <genre>classical</genre>
+            <year>2022</year>
+        </track>
+        
+        <!-- Hip Hop Tracks -->
+        <track>
+            <id>track_018</id>
+            <title>STREET KINGS</title>
+            <artist>MC FLOW</artist>
+            <album>Urban Legends</album>
+            <duration>234</duration>
+            <durationDisplay>3:54</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3</location>
+            <image>🎤</image>
+            <thumbnail>images/street-kings.jpg</thumbnail>
+            <genre>hiphop</genre>
+            <year>2024</year>
+        </track>
+        <track>
+            <id>track_019</id>
+            <title>BEAT DROP</title>
+            <artist>RAP MASTER</artist>
+            <album>Bass Heavy</album>
+            <duration>198</duration>
+            <durationDisplay>3:18</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3</location>
+            <image>🔥</image>
+            <thumbnail>images/beat-drop.jpg</thumbnail>
+            <genre>hiphop</genre>
+            <year>2025</year>
+        </track>
+        <track>
+            <id>track_020</id>
+            <title>CITY LIGHTS</title>
+            <artist>URBAN POET</artist>
+            <album>Midnight Tales</album>
+            <duration>223</duration>
+            <durationDisplay>3:43</durationDisplay>
+            <location>https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3</location>
+            <image>🌃</image>
+            <thumbnail>images/city-lights.jpg</thumbnail>
+            <genre>hiphop</genre>
+            <year>2024</year>
+        </track>
+    </trackList>
+</playlist>
